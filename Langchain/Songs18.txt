@@ -1,0 +1,391 @@
+{id=1890385695,name=been loving,songer=Mayten,emotion={
+  "summary": "这首歌曲《been loving》表达了一种迷茫和平庸的情感，歌词中反复出现的“falling”一词强烈表达了情感的压抑和沉重。评论中也有一些迷茫和不安的情绪，但也有一些积极向上的声音。总的来说，这首歌曲引发了听众的共鸣，让他们在茫然中找到了一丝安慰和希望。"
+}}
+{id=2074294309,name=One Of The Girls - Speed,songer=batwohan,emotion={
+  "Summary": "这首歌曲《One Of The Girls - Speed》表达了一种强烈的情感，歌曲本身情感中体现了一种控制和支配的欲望，歌词中的重复和强调进一步加强了这种情感。听众的评论也反映了对这首歌曲的喜爱和认同，评论中出现了一些积极的评价，如“太喜欢这种声线了”和“魅惑，这样形容，很适合doi听”。总的来说，这首歌曲引发了听众强烈的情感共鸣，表达了一种控制和被控制的关系。"
+}}
+{id=2039402118,name=Jericho,songer=Iniko,emotion={
+  "Summary": "这首歌曲《Jericho》表达了一种强烈的自信和力量感。歌词中的词语和表达方式都充满了自我肯定和对未来的期待。评论中的观众也对这首歌曲给予了积极的评价，认为它很好听、潮流和牛逼。综合来看，这首歌曲的情感是积极向上的，能够给人带来力量和自信。"
+}}
+{id=1424460203,name=After Hours,songer=The Weeknd,emotion={
+  "SongSentiment": {
+    "song_name": "After Hours",
+    "lyrics": {
+      "positive": 3,
+      "negative": 2,
+      "neutral": 2
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "positive": 8,
+      "negative": 2,
+      "neutral": 9
+    }
+  },
+  "Summary": "根据歌曲《After Hours》的情感分析结果，歌曲本身情感中，歌名和歌词中表达的情感主要是积极的，其中积极情感出现3次，消极情感出现2次，中性情感出现2次。而从听众的评论中可以看出，积极情感的评论有8条，消极情感的评论有2条，中性情感的评论有9条。综合来看，这首歌曲在听众中引起了积极的情感共鸣，大部分听众对这首歌曲持中性情感态度。" 
+}}
+{id=1369602061,name=double take,songer=dhruv,emotion={
+  "Summary": "这首歌《double take》表达了一种强烈的情感，歌词中充满了对某人的思念和迷恋。歌曲本身情感是浪漫和热情，通过歌名和歌词中的表达可以感受到。听众情感也是积极向上的，评论中多数是对歌曲的赞美和共鸣。整体而言，这首歌曲传递了一种热烈的爱情情感，让人感到幸福和充满希望。"
+}}
+{id=2091640954,name=Last Christmas,songer=ASTN,emotion={
+  "summary": "这首歌是《Last Christmas》，歌曲本身情感是失恋和对过去的回忆，歌词中多次提到了失去心爱的人的痛苦和对他人的期望。听众情感主要集中在喜悦、回忆和期待圣诞节的氛围。评论中有人表示笑死了，有人觉得好听，也有人表示圣诞节快到了。总的来说，这首歌引发了听众的共鸣，让人们回忆起过去的感情经历，并期待着即将到来的圣诞节。"
+}}
+{id=1937340367,name=A Thousand Years,songer=Jada Facer,emotion={
+  "Summary": "这首歌曲《A Thousand Years》表达了一种深情和坚定的爱。歌词中的词语和句子都充满了温柔和勇气，表达了对爱人的等待和承诺。评论中的观众也对这首歌曲充满了赞美和感激之情，认为它温柔而坚定，能够给人带来安神和梦幻的感觉。总的来说，这首歌曲在歌曲本身情感和听众情感方面都表达了深情和坚定的爱，给人带来了温暖和感动。"
+}}
+{id=1940057567,name=Fainted Priest,songer=Fatrik,emotion={
+  "summary": "《Fainted Priest》是一首纯音乐，没有明显的歌词表达情感。根据评论分析，听众对这首歌的情感评价较为积极，有人表示感觉心脏要跳出来了，有人觉得很屌，还有人为这首曲子表白成功并引起了女友的感动。总体来说，这首歌曲引发了听众的积极情绪和共鸣。"
+}}
+{id=521416693,name=So Far Away,songer=Martin Garrix,emotion={
+  "SongSentiment": {
+    "song_name": "So Far Away",
+    "lyrics": {
+      "positive": 0,
+      "negative": 3,
+      "neutral": 2
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "positive": 5,
+      "negative": 3,
+      "neutral": 11
+    }
+  },
+  "Summary": "这首歌曲《So Far Away》表达了对爱人的思念和遗憾之情。从歌词中可以感受到歌曲本身情感的强烈，其中负面情感占据主导。评论中的情感以中性为主，少数人表达了积极和消极的情感。总体而言，这首歌曲引发了听众对爱与失去的思考和情感共鸣。"}
+{id=1919684213,name=Night Drive,songer=Wilee,emotion={
+  "Summary": "《Night Drive》是一首纯音乐，没有歌词表达情感。根据评论分析，听众对这首歌的情感评价较为积极，评论中出现了一些正面的词语，如“cool”、“加油”等。然而，评论中也出现了一些无关情感的内容，如“爸爸回来了，妈妈把王叔叔藏进了衣柜”。综合来看，听众对这首歌的情感评价较为正面，给人一种积极向上的感觉。"
+}}
+{id=1830419924,name=Peaches,songer=Justin Bieber,emotion={
+  "SongSentiment": {
+    "song_name": "Peaches",
+    "sentiment": "positive",
+    "intensity": "strong"
+  },
+  "ListenerSentiment": {
+    "comments_sentiment": "positive",
+    "intensity": "moderate"
+  },
+  "Summary": "《Peaches》是一首情感积极且强烈的歌曲。歌名和歌词中的情感表达都很明确，给人带来愉悦和温暖的感觉。评论中的情感也是积极的，尽管强度适中。总的来说，观众对这首歌曲的情感反应是正面的，但并不是非常强烈。"}}
+{id=1960642479,name=Shootout,songer=Izzamuzzic,emotion={
+  "SongSentiment": {
+    "song_name": "Shootout",
+    "lyrics": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "positive": 2,
+      "negative": 4,
+      "neutral": 14
+    }
+  },
+  "Summary": "根据歌曲《Shootout》的歌名和歌词分析，歌曲本身情感中没有明显的积极或消极情绪。然而，从听众的评论中可以看出，有2条积极评论，4条消极评论和14条中立评论。这表明听众对这首歌的情感评价较为负面，可能与歌词中的情感表达有关。总体而言，听众对这首歌的情感评价较为中立。" 
+}}
+{id=442867526,name=Die For You,songer=The Weeknd,emotion={
+  "summary": "这首歌《Die For You》表达了一种深情的爱，歌词中充满了对爱人的承诺和牺牲。歌曲本身情感非常强烈，通过歌名和歌词的表达，传递出一种愿意为对方付出一切的决心和坚定。听众的评论也反映了他们对这首歌的喜爱和共鸣，有人形容这首歌像在末日爆炸时拉着逃跑的感觉，有人表示被歌曲的后劲所服气。总的来说，这首歌引发了听众们对爱情的思考和情感共鸣，让人感受到了深深的情感连接。"
+}}
+{id=2035321385,name=Push Up,songer=Creeds,emotion={
+  "summary": "这首歌《Push Up》的情感分析结果如下：歌曲本身情感为积极（Positive），歌词中的重复出现的歌词表达了强烈的情感。听众情感中，评论列表中前面的评论情感价值更高，多数评论表达了负面情感，如不舒服、难受、恐惧等。总体来说，这首歌曲引发了听众的负面情感。"
+}}
+{id=1938756186,name=Bet On Me (Organic Version),songer=Walk off the Earth,emotion={
+  "Summary": "这首歌曲《Bet On Me (Organic Version)》表达了一种自信和乐观的情感。歌名和歌词中的词语都强调了自己的价值和能力，鼓励听众对自己抱有信心。评论中的内容也大多是积极的，表达了对歌曲和歌手的喜爱和支持。总的来说，这首歌曲传递了一种积极向上的情感，能够给人带来力量和鼓舞。"
+}}
+{id=1464325108,name=Mood,songer=24kGoldn,emotion={
+  "Summary": "这首歌的情感分析结果显示，歌曲本身情感主要是愤怒和挫败感，体现在歌名和歌词中。歌曲表达了对他人的不满和对规则的反抗。听众情感主要是喜悦和困惑，体现在评论中。有些听众对歌曲的情感产生了共鸣，有些听众则对歌曲的情感感到困惑。总的来说，这首歌曲引发了听众的情感共鸣和思考。"
+}}
+{id=1999170057,name=Christmas List,songer=Anson Seabra,emotion={
+  "SongSentiment": {
+    "song_name": "Christmas List",
+    "lyrics": {
+      "positive": 4,
+      "negative": 0,
+      "neutral": 19
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 7,
+    "negative": 1,
+    "neutral": 11
+  },
+  "Summary": "《Christmas List》这首歌曲本身情感主要表达了温暖、满足和感恩的情感，歌词中多次强调了与心爱的人共度圣诞的幸福。听众的情感也主要是积极向上的，表达了对圣诞节的期待和喜悦。总的来说，这首歌曲传递了一种温馨和幸福的情感，能够让人感受到圣诞节的美好氛围。" 
+}}
+{id=2062751869,name=Scared 2 Be Lonely,songer=Lil Tjay,emotion={
+  "SongSentiment": {
+    "song_name": "Scared 2 Be Lonely",
+    "sentiment": "强烈"
+  },
+  "ListenerSentiment": {
+    "comments_sentiment": "积极",
+    "summary": "这首歌曲《Scared 2 Be Lonely》情感强烈，歌词中表达了对孤独的恐惧和对未来的希望。评论中大部分是积极的，听众表示这首歌给他们带来力量和勇气，赋予了他们不同的色彩。"
+  }
+}}
+{id=473120817,name=Payphone,songer=Maroon 5,emotion={
+  "SongSentiment": {
+    "song_name": "Payphone",
+    "sentiment": "sad",
+    "intensity": "strong"
+  },
+  "ListenerSentiment": {
+    "comments_sentiment": "mixed",
+    "summary": "这首歌《Payphone》表达了一种悲伤的情感，歌词中的内容和歌名都体现了这种情感。歌曲中的情感强度较高，通过反复出现的歌词和歌曲的整体氛围传达出来。评论中的情感较为复杂，有些评论表达了对过去的怀念和失望，而有些评论则表达了对未来的希望和努力。总的来说，观众对这首歌曲的情感是多样的，包含了悲伤、希望和怀旧等不同情绪。"
+  }
+}}
+{id=1858897067,name=Balenciaga,songer=T3nzu,emotion={
+  "summary": "这首歌曲《Balenciaga》的情感分析结果如下：\n\n歌曲本身情感：\n- 歌名《Balenciaga》传达出一种高级、奢华的情感，给人一种独特的氛围。\n- 歌词中的重复表达了一种坚持和执着的情感，同时也带有一定的无聊和乏味。\n\n听众情感：\n- 评论中出现了喜欢、高级、好听等积极的情感词，表明听众对这首歌曲持有正面评价。\n- 评论中也出现了一些负面情感，如头疼、重复等，但整体情感还是偏向积极的。\n\n综上所述，这首歌曲《Balenciaga》传达出一种高级、奢华的情感，同时也带有一定的坚持和执着。听众对这首歌曲持有积极的评价，认为它是一首好听的歌曲。"
+}}
+{id=1903867223,name=Baby,songer=Justin Bieber,emotion={
+  "SongSentiment": {
+    "song_name": "Baby",
+    "lyrics": {
+      "positive": 4,
+      "negative": 2,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 12,
+    "negative": 0,
+    "neutral": 8
+  },
+  "Summary": "歌曲《Baby》的情感分析结果显示，歌曲本身情感中，歌名和歌词表达的情感主要为积极情绪，其中积极情绪出现4次，消极情绪出现2次。而听众的情感主要为积极情绪，其中积极情绪出现12次，中性情绪出现8次。总体而言，这首歌曲在听众中引起了积极的情感共鸣。" 
+}}
+{id=1859515946,name=Cure For Me,songer=AURORA,emotion={
+  "summary": "这首歌曲《Cure For Me》表达了一种复杂的情感。从歌词和歌名来看，歌曲本身情感主要是关于寻找自我疗愈的过程，表达了对于他人帮助的拒绝。而从评论中可以看出，听众对这首歌曲的情感也是多样的，有人表示喜欢和赞美，有人则提到了一些个人的情感体验。总的来说，这首歌曲引发了听众们的共鸣，让他们在不同的情感中找到了共同点。"
+}}
+{id=1374329431,name=Dancing With Your Ghost,songer=Sasha Alex Sloan,emotion={
+  "summary": "这首歌曲《Dancing With Your Ghost》表达了失去爱人后的痛苦和思念之情。歌词中的情感主要集中在失去爱人后的无法释怀和对爱人的思念上。歌名《Dancing With Your Ghost》象征着与爱人的灵魂共舞，表达了对爱人的深深思念和无法割舍的情感。评论中的情感主要是对歌曲的赞美和鼓励，以及一些个人的情感抒发。总的来说，这首歌曲引发了听众对失去爱人的情感共鸣，并且通过共同的情感体验来寻求安慰和支持。"
+}}
+{id=1808235517,name=i walk this earth all by myself,songer=EKKSTACY,emotion={
+  "summary": "这首歌曲表达了一种孤独和无助的情感，歌词中反复出现的短语强化了这种情感。评论中也有一些观众对歌曲的赞美和共鸣，认同了歌曲中的情感。总的来说，这首歌曲引发了听众的共鸣，表达了一种内心的孤独和无助。"
+}}
+{id=501133800,name=Everybody Dies In Their Nightmares,songer=XXXTENTACION,emotion={
+  "SongSentiment": {
+    "song_name": "Everybody Dies In Their Nightmares",
+    "sentiment": "sad",
+    "intensity": "strong"
+  },
+  "ListenerSentiment": {
+    "sentiment": "mixed",
+    "intensity": "moderate"
+  },
+  "Summary": "这首歌曲《Everybody Dies In Their Nightmares》表达了强烈的悲伤情感。歌词中反复出现的短语“Tired of feelin' like I'm trapped in my damn mind”和“Tired of feelin' like I'm wrapped in a damn lie”表达了主人公内心的困扰和痛苦。评论中的情感较为复杂，有些人对歌曲表示赞赏，有些人则对歌曲的主题提出质疑。总体而言，听众对这首歌曲的情感评价存在一定的分歧。"}
+{id=2084473227,name=Memory Reboot x Time to Pretend,songer=ZsFlovexl,emotion={
+  "summary": "这首歌曲《Memory Reboot x Time to Pretend》是一首纯音乐，没有歌词。根据评论分析，听众对这首歌曲的情感主要是舒适、加油、希望、改变、期待、失望等。评论中出现了一些积极的情感，如加油、希望、改变，也有一些消极的情感，如失望。总体来说，听众对这首歌曲的情感是积极向上的，带有一定的期待和挑战自我的情绪。"
+}}
+{id=1914893736,name=BABYDOLL,songer=Ari Abdul,emotion={
+  "Summary": "这首歌曲《BABYDOLL》表达了一种复杂的情感，既有歌曲本身情感，也有听众情感。从歌名和歌词中可以感知到一种被爱情伤害的痛苦和渴望得到救赎的情感。评论中的情感也多样，有人对歌曲表达的情感感同身受，有人对歌曲的版本有争议。总体而言，这首歌曲引起了听众的共鸣，让人们感受到了情感的复杂性和力量。"
+}}
+{id=2080279430,name=One Of The Girls (slowed + reverb),songer=MSiC,emotion={
+  "SongSentiment": {
+    "song_name": "One Of The Girls (slowed + reverb)",
+    "sentiment": "强烈"
+  },
+  "ListenerSentiment": {
+    "comments": [
+      "带我一个玩呗",
+      "真的很绝",
+      "别太离谱",
+      "喜欢喜欢💕",
+      "₊⁺ ♡̶₊⁺⑉",
+      "听歌",
+      "@YIPINGLUO ",
+      "哈哈哈哈哈哈我觉得蛮正常的，利己主义",
+      "哈哈哈哈，有道理",
+      "所以说是“也许雨会停风会息 宁愿这夜永不醒”",
+      "不知道自己多少级，留个言看看",
+      "勾石😅",
+      "放你爱听的音乐\n\n去感受 闭上眼别想太多",
+      "你也是好孩子",
+      "健康的恋爱好比白开水和果汁 不是纯净无味就是酸酸甜甜 而畸形的恋爱就是酒 会上头会醉会上瘾 但也不打算戒掉 “也许雨会停风会息明日会晴 宁愿这夜永不醒”",
+      "祝你可以伤到你跌的心捏😅",
+      "网络🪵🪝",
+      "好听",
+      "这歌给人一种温存过后颓靡又上瘾的感觉，想立马让自己抽离但是在夜深时又会忍不住想起对方。"
+    ],
+    "sentiment": "复杂"
+  }
+}}
+{id=1805317558,name=Black Magic,songer=Jonasu,emotion={
+  "Summary": "这首歌《Black Magic》表达了一种强烈的情感，歌词中的描述和歌名都暗示了一种神秘的魔力。从评论中可以看出，听众对这首歌的反应也很积极，有人表示被歌曲的节奏和歌词吸引，有人分享了自己对这首歌的感受。总的来说，这首歌引发了听众们的共鸣，让他们产生了积极的情感体验。"
+}}
+{id=1458667025,name=Honest,songer=rei brown,emotion={
+  "summary": "这首歌曲《Honest》表达了一种复杂的情感。从歌词中可以感受到歌手内心的矛盾和挣扎，他承认自己从未真正爱过对方，同时也意识到这并不是他们之间承诺的样子。歌曲中的情感强烈且真实，歌手对自己的感情和对方的期望产生了冲突。评论中的观众也对这首歌表示了喜欢和赞赏，认为旋律好听且歌词翻译得很棒。总的来说，这首歌曲引发了听众的共鸣，让人们思考爱情和承诺的真实性。"
+}}
+{id=1952414478,name=Nightmare (Brainbug),songer=CHRSTPHR,emotion={
+  "SongSentiment": {
+    "song_name": "Nightmare (Brainbug)",
+    "lyrics": "纯音乐，请欣赏",
+    "sentiment": "平静"
+  },
+  "ListenerSentiment": {
+    "comments": [
+      "封面IKUN",
+      "额",
+      "别给我太搞笑了铁汁",
+      "我闪击啥呀[汗]",
+      "怎么样了",
+      "犹如蟒蛇缠绕的窒息感",
+      "冲击波笑嘻了",
+      "6",
+      "游戏看得懂嘛？有手有脑不想想怎么好好考研张口闭口一个僵尸显得你很机灵啊？",
+      "小猫",
+      "燃起来了明早闪击福建面线糊",
+      "将军的小曲",
+      "燃起来了明早闪击青岛啤酒二厂",
+      "这个鼓点好像The Finals的🥲 想它了",
+      "那个男人",
+      "很好的一首歌，使我的三星五费旋转",
+      "犹如肌粑卢不出来的窒息感",
+      "炸裂[生病]",
+      "抓紧脐带，妈要开始摇了",
+      "为了3:36的辉煌一霎"
+    ],
+    "sentiment": "兴奋"
+  },
+  "Summary": "《Nightmare (Brainbug)》是一首纯音乐，请欣赏。根据评论分析，听众对这首歌的情感主要是兴奋。评论中提到了犹如蟒蛇缠绕的窒息感、冲击波笑嘻了、燃起来了等表达强烈情感的词语。总体而言，听众对这首歌的情感评价较高，认为它很好，能使他们兴奋起来。" 
+}}
+{id=1990743306,name=I Really Want to Stay at Your House,songer=Samuel Kim,emotion={
+  "SongSentiment": {
+    "song_name": {
+      "emotion": "longing",
+      "intensity": "moderate"
+    },
+    "lyrics": {
+      "emotion": "heartbreak",
+      "intensity": "strong"
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "emotion": "sadness",
+      "intensity": "moderate"
+    }
+  },
+  "Summary": "这首歌曲《I Really Want to Stay at Your House》表达了一种渴望和思念的情感，歌名中体现了一种强烈的渴望，歌词中则表达了一种心碎的情感。评论中的情感主要是悲伤，情感强度适中。总的来说，这首歌曲引发了听众的思考和情感共鸣，表达了对某人的渴望和失去后的痛苦。"}
+{id=1819036135,name=Calling My Phone,songer=Lil Tjay,emotion={
+  "SongSentiment": {
+    "song_name": "Calling My Phone",
+    "lyrics_sentiment": {
+      "positive": 0,
+      "negative": 4,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "comments_sentiment": {
+      "positive": 4,
+      "negative": 6,
+      "neutral": 6
+    }
+  },
+  "Summary": "这首歌《Calling My Phone》的歌词表达了消极的情感，主要集中在失去和痛苦上。评论中的情感较为复杂，既有积极的评论，也有消极的评论，还有一些中立的评论。总体而言，听众对这首歌的情感评价较为平衡，没有明显的偏向。" 
+}}
+{id=545947135,name=All For Love,songer=Tungevaag & Raaban,emotion={
+  "SongSentiment": {
+    "song_name": "All For Love",
+    "lyrics": {
+      "positive": 4,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 7,
+    "negative": 2,
+    "neutral": 11
+  },
+  "Summary": "《All For Love》是一首充满爱意的歌曲，歌词中表达了对爱情的执着和付出。从歌名和歌词中可以感受到积极向上的情感。评论中大部分是中性情感，但也有一些积极和消极的评论。总体而言，听众对这首歌曲的情感评价较为积极，表达了对歌曲的喜爱和认同。" 
+}}
+{id=2068401809,name=Ticking Away,songer=VALORANT,emotion={
+  "summary": "这首歌曲《Ticking Away》表达了一种对时间流逝的焦虑和对生活的追求。歌词中反复出现的“ticking away”一词强调了时间的流逝，歌曲本身情感较为紧张和急切。评论中的观众情感主要集中在对歌曲的赞赏和喜爱，表达了对歌曲的热情和兴奋。总体而言，这首歌曲引发了观众对时间流逝和生活意义的思考，同时也带来了积极的情感体验。"
+}}
+{id=2025337662,name=DARK RAVE,songer=l19u1d,emotion={
+  "summary": "这首歌曲《DARK RAVE》是一首纯音乐，没有歌词。从评论中可以看出，听众对这首歌的情感评价较为积极，认为这首歌很硬核，让人感觉很吊。评论中也有一些幽默的内容，但总体来说，听众对这首歌的情感是正面的。"
+}}
+{id=1297498908,name=Walk Thru Fire,songer=Vicetone,emotion={
+  "Summary": "这首歌曲《Walk Thru Fire》表达了一种坚定的情感，歌词中强调了作者愿意与听众一同面对困难和挑战。歌曲本身情感体现在歌名和歌词中，强调了作者愿意为了听众而付出一切。评论中的情感也体现了听众对这首歌的喜爱和赞赏。总的来说，这首歌曲传递了一种积极向上的情感，鼓励人们勇敢面对困难并相互支持。"
+}}
+{id=2077833531,name=Easy On My Heart,songer=Gabry Ponte,emotion={
+  "Summary": "这首歌曲《Easy On My Heart》表达了作者对爱情的矛盾情感。歌词中提到了爱情应该是善良的，但作者却经历了许多痛苦和失望。他希望对方能够对他的心灵温柔一些。评论中的观众也表达了类似的情感，有人表示自己也有同样的经历，有人赞美这首歌的好听。总的来说，这首歌曲引发了听众对于爱情的共鸣和思考。"
+}}
+{id=1892409985,name=Bamba!,songer=Armağan Oruç,emotion={
+  "SongSentiment": {
+    "song_name": "Bamba!",
+    "lyrics": {
+      "positive": 0,
+      "negative": 0,
+      "neutral": 1
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 5,
+    "negative": 2,
+    "neutral": 13
+  },
+  "Summary": "根据歌曲《Bamba!》的情感分析结果，歌曲本身情感中以中性为主。在听众情感中，积极情感出现5次，消极情感出现2次，中性情感出现13次。综合来看，听众对这首歌曲的情感较为中性，没有明显的偏向。" 
+}}
+{id=441491410,name=Wild,songer=Monogem,emotion={
+  "summary": "这首歌《Wild》表达了一种不受束缚、追求自由的情感。歌词中反复强调了生活太短暂，不应该被束缚，应该勇敢地活出自己。评论中也有人表示这首歌让他们感到嗨起来，不想上班了。总的来说，这首歌传递了一种积极向上、追求自由的情感，让人感到振奋和充满活力。"
+}}
+{id=550936829,name=Ferrari,songer=Bebe Rexha,emotion={
+  "Summary": "这首歌曲《Ferrari》表达了一个人在快节奏生活中的孤独和迷失。歌词中提到了生活的匆忙和追求空虚的高潮，以及对于慢下来、感受生活的渴望。评论中的观众也表达了对自由、放松和追求梦想的向往。整体上，这首歌曲传达了一种对于快节奏生活的反思和对于真正意义上的幸福的追求。"
+}}
+{id=1964236604,name=Nonsense,songer=Sabrina Carpenter,emotion={
+  "Summary": "这首歌《Nonsense》表达了一种欢快的情感，歌曲本身情感非常积极向上。歌词中充满了对爱情的渴望和对恋人的迷恋，表达了对恋爱的矛盾心理。评论中的观众情感也比较积极，大部分人对这首歌持正面评价，认为这是一首欢快的歌曲。总的来说，这首歌曲传递了一种快乐和积极的情感，能够让人感到愉悦和兴奋。"
+}}
+{id=2085341867,name=one of the girls (Sped Up),songer=JoinQ,emotion={
+  "summary": "这首歌曲《one of the girls (Sped Up)》表达了一种复杂的情感。从歌名和歌词中可以感受到一种被控制和被压迫的情感，歌词中的一些暗示性的描述也表达了一种亲密关系中的权力关系。评论中的观众情感也比较复杂，有人觉得好听，有人觉得好，也有人对歌曲的版本有不同的喜好。总的来说，这首歌曲引发了观众们不同的情感体验，有些人可能会对其中的情感共鸣，而有些人可能会对其中的情感感到困惑。"
+}}
+{id=1303019276,name=2 soon,songer=keshi,emotion={
+  "summary": "这首歌《2 soon》表达了歌手对失去爱人的痛苦和后悔。歌词中反复出现的词语“drank too much”、“got the sickness”、“pray to god and his son for forgiveness”等表达了歌手对自己的自责和悔恨。评论中的观众情感也主要集中在对歌曲的喜爱和对歌手的支持上。总的来说，这首歌曲的情感是悲伤和后悔，观众对歌曲的情感也是积极的。"
+}}
+{id=1979382551,name=Straight A's,songer=Connor Price,emotion={
+  "SongSentiment": {
+    "song_name": "Straight A's",
+    "lyrics": {
+      "positive": 5,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 10,
+    "negative": 1,
+    "neutral": 5
+  },
+  "Summary": "这首歌《Straight A's》表达了自信和成功的情感，歌词中的积极元素较多。听众的情感也主要是积极的，大部分评论都表达了对歌曲的喜爱和赞赏。总体而言，这首歌曲传递了一种积极向上的情感，能够给人带来快乐和动力。"
+}}
+{id=2080111430,name=payphone ( slowed + reverb ),songer=MSiC,emotion={
+  "SongSentiment": {
+    "song_name": "payphone ( slowed + reverb )",
+    "sentiment": "nostalgic"
+  },
+  "ListenerSentiment": {
+    "sentiment": "motivated"
+  }
+}}
+{id=1948643297,name=Tokyo Rain,songer=Yavomag,emotion={
+  "SongSentiment": {
+    "song_name": "Tokyo Rain",
+    "sentiment": "negative",
+    "intensity": "strong"
+  },
+  "ListenerSentiment": {
+    "comments_sentiment": "mixed",
+    "summary": "听众对这首歌的情感评价较为复杂，评论中既有正面评价，也有负面评价。然而，总体来说，这首歌的情感倾向是负面的，且情感强度较强。"
+  }
+}}
+{id=1333336513,name=Let Go,songer=Beau Young Prince,emotion={
+  "Summary": "这首歌《Let Go》表达了歌手内心的矛盾和迷茫，同时也传递了一种希望和释放的情感。歌词中反复出现的“let go”表达了歌手渴望解脱和放手的愿望。评论中的情感也多是积极向上的，有人表示喜欢这首歌，有人鼓励歌手加油。综合来看，这首歌曲的情感是复杂的，既有矛盾和迷茫，又有希望和积极向上的情绪。"
+}}
+{id=1890494798,name=Enemy (from the series Arcane League of Legends),songer=Imagine Dragons,emotion={
+  "summary": "这首歌曲《Enemy (from the series Arcane League of Legends)》表达了一种矛盾的情感。从歌名和歌词中可以感受到歌曲本身情感的强烈，歌词中的词语和句子表达了被误解、被敌视的感觉。评论中的观众情感也体现了这种矛盾，有人觉得这首歌很有思想觉悟，有人觉得很感动，也有人觉得很帅。总的来说，这首歌曲引起了听众的共鸣，让人们在情感上产生了共鸣和反思。"
+}}
+{id=33051312,name=Wake (Studio),songer=Hillsong Young & Free,emotion={
+  "Summary": "这首歌曲是《Wake (Studio)》，歌曲本身情感是充满希望和力量的，歌名和歌词都表达了这种情感。听众的情感也是积极向上的，评论中多数是鼓励和支持的话语。整体上，这首歌曲传递了一种积极乐观的情感，能够激励人们面对困难和挑战。"
+}}

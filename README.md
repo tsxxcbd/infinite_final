@@ -23,7 +23,7 @@
 
    需求与设计文档
 
-   InfiniteMusic.pptx 展示的PPT
+   InfinityMusic.pptx 展示的PPT
 
    用例图.mdj 存放了用例图，主要类图和流程图
    

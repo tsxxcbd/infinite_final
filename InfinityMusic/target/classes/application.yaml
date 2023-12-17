@@ -1,0 +1,20 @@
+server:
+    port: 8080
+spring:
+    datasource:
+        #type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/infinitemusic?serverTimezone=UTC
+        username: root
+        password: 3306
+
+    mvc:
+        pathmatch:
+            matching-strategy: ant_path_matcher
+
+# MongoDB 配置
+    data:
+        mongodb:
+            host: localhost
+            port: 27017
+            database: SONGLIST

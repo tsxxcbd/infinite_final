@@ -37,15 +37,15 @@
 
    SongsX.txt 每五十首歌的心情数据文件
 
-4. InfiniteMusic
+4. InfinityMusic
 
    应用的后端文件
 
-5. Wrom
+6. Wrom
 
    爬取歌曲的爬虫文件
 
-6. InfiniteAAA
+7. InfiniteAAA
 
    应用的前端文件
     

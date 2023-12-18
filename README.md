@@ -9,7 +9,7 @@
   
 3. 王子扬
 
-   InfinityMusic后端文件User、Search内容的相关书写，用户登录注册、搜索的后端连接，以及部分前后端全局异常处理
+   InfiniteMusic后端文件User、Search内容的相关书写，用户登录注册、搜索的后端连接，以及部分前后端全局异常处理
 
 
 # 文件内容说明
@@ -37,7 +37,7 @@
 
    SongsX.txt 每五十首歌的心情数据文件
 
-4. InfinityMusic
+4. InfiniteMusic
 
    应用的后端文件
 

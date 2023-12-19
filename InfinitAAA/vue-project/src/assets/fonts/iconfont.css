@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4352519 */
+  src: url('iconfont.woff2?t=1701314478156') format('woff2'),
+       url('iconfont.woff?t=1701314478156') format('woff'),
+       url('iconfont.ttf?t=1701314478156') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-follow:before {
+  content: "\e83b";
+}
+
+.icon-follow-fill:before {
+  content: "\e83c";
+}
+
+.icon-zanting:before {
+  content: "\e638";
+}
+
+.icon-bofangqi-bofang:before {
+  content: "\e6a4";
+}
+
+.icon-24gf-playlistHeart:before {
+  content: "\ea84";
+}
+
+.icon-shangyishou:before {
+  content: "\e63c";
+}
+
+.icon-xiayishou:before {
+  content: "\e63e";
+}
+
+.icon-robot:before {
+  content: "\e66e";
+}
+
+.icon-favorfill:before {
+  content: "\e64b";
+}
+
+.icon-favor:before {
+  content: "\e64c";
+}
+
+.icon-comment:before {
+  content: "\e667";
+}
+
+.icon-sort:before {
+  content: "\e700";
+}
+
+.icon-sousuo:before {
+  content: "\e632";
+}
+
+.icon-shengyin:before {
+  content: "\e60b";
+}
+

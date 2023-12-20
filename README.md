@@ -37,7 +37,7 @@
 
    SongsX.txt 每五十首歌的心情数据文件
 
-4. InfinityMusic
+4. InfiniteMusic
 
    应用的后端文件
 

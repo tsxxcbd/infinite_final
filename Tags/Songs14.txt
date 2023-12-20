@@ -1,0 +1,460 @@
+{id=2097788346,name=Your Blood,songer=AURORA,emotion={
+  "SongSentiment": {
+    "song_name": {
+      "emotion": "深情",
+      "intensity": "中等"
+    },
+    "lyrics": {
+      "emotion": "悲伤",
+      "intensity": "强烈"
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "emotion": "鼓舞",
+      "intensity": "中等"
+    }
+  },
+  "Summary": "这首歌曲《Your Blood》表达了深情的情感，歌词中的悲伤情绪非常强烈。评论中的观众情感为鼓舞，中等强度。这首歌曲通过深情的歌名和悲伤的歌词，以及观众的鼓舞情感，给人一种深刻的感受。" 
+}}
+{id=2097533986,name=Qaytmayman Ishon,songer=Sardor Safarov,emotion={
+  "summary": "这首歌曲《Qaytmayman Ishon》表达了一种复杂的情感，歌名中的情感无法具体确定，但歌词中的表达多为心碎、心动、遗憾等负面情绪。评论中也有一些负面情绪的表达，如后悔、遗憾等。综合来看，这首歌曲的情感主要是负面的，带有一定的伤感和失落。听众对这首歌曲的情感也主要是负面的，表达了对失去的人或事物的思念和遗憾。"
+}}
+{id=2104626784,name=Son Combat (From "La Tresse" Soundtrack),songer=Ludovico Einaudi,emotion={
+  "summary": "这首歌曲《Son Combat (From \"La Tresse\" Soundtrack)》是电影《La Tresse》的原声音乐，根据畅销书改编。评论中提到了这部电影的情节和作者，说明这首歌曲在观众中引起了一定的共鸣。然而，由于歌曲本身没有歌词，很难从中提取出明确的情感。因此，对于歌曲本身情感，我们无法给出具体的分析结果。至于听众情感，评论中出现了一些积极的评价，如“好听”、“挺好听的”，这表明听众对这首歌曲持有积极的情感。综上所述，这首歌曲在观众中引起了一定的共鸣，并且大多数听众对其持有积极的情感。"
+}}
+{id=2083422736,name=Better Off (Alone, Pt. III),songer=Alan Walker,emotion={
+  "Summary": "这首歌曲《Better Off (Alone, Pt. III)》表达了一种积极向上的情感，歌名和歌词中的内容都传递出了快乐和享受的情绪。歌词中多次出现的短语“Can you make me feel better”和“This could be a good night, for good times and you look like a good time”强调了情感的强烈和积极性。评论中的大部分也是积极的，赞美了这首歌的好听和感觉不错。综上所述，这首歌曲的情感是积极向上的，能够给听众带来愉悦和享受。"
+}}
+{id=2097208596,name=Тает лед (Radio Edit),songer=Ли Цзясин,emotion={
+  "summary": "这首歌曲《Тает лед (Radio Edit)》情感较为复杂。从歌名和歌词来看，无法准确判断歌曲本身的情感。然而，从评论中可以看出，听众对这首歌曲的情感较为积极和正面，评论中出现了很多赞美和喜欢的词语。因此，可以总结这首歌曲引起了听众的喜爱和赞赏，情感较为正面。"
+}}
+{id=2098372417,name=Maybe Man,songer=AJR,emotion={
+  "summary": "这首歌《Maybe Man》表达了歌手对自己身份和情感的迷茫和不确定。歌词中反复出现的情感词汇表达了强烈的情感，如希望成为石头、拥有后视镜、成为自己的狗等。评论中的观众情感也多为喜欢和赞赏，认为歌曲准确地表达了他们的心情。总的来说，这首歌曲的情感是复杂而深刻的，能够引起听众的共鸣和思考。"
+}}
+{id=2103501417,name=Parcha-parcha,songer=Uzmir,emotion={
+  "summary": "这首歌曲《Parcha-parcha》表达了复杂的情感，歌曲本身情感中体现了失望、伤心、痛苦等负面情绪，而听众情感中则包含了爱、喜欢、感动等正面情绪。歌词中反复出现的词语表达了情感的强烈度，尤其是“Yuragim Yancha Yancha Yancha”和“Hanjarlaring Sancha Sancha Sancha”。评论中的情感也多样，有人表达了喜欢和感动，也有人表达了失望和痛苦。总的来说，这首歌曲引发了听众的复杂情感，既有正面情绪的体验，也有负面情绪的触动。"
+}}
+{id=2103788569,name=Gimme Love,songer=Sia,emotion={
+  "SongSentiment": {
+    "song_name": "Gimme Love",
+    "lyrics": {
+      "positive": 3,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 12,
+    "negative": 1,
+    "neutral": 7
+  },
+  "Summary": "《Gimme Love》是一首充满活力和积极情感的歌曲。从歌词和评论中可以感受到听众对这首歌的积极情感。歌曲本身情感中，歌名和歌词表达了对爱的渴望和希望，没有明显的负面情感。评论中的大部分是积极的，表达了对新歌的喜爱和对歌手的支持。总体而言，这首歌曲给人带来了积极的情感和愉悦的体验。" 
+}}
+{id=2092433043,name=Deep End,songer=The Score,emotion={
+  "SongSentiment": {
+    "song_name": "Deep End",
+    "lyrics": {
+      "positive": 2,
+      "negative": 1,
+      "neutral": 2
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 12,
+    "negative": 1,
+    "neutral": 7
+  },
+  "Summary": "《Deep End》是一首情感丰富的歌曲。从歌词中可以感受到歌曲本身情感的强烈，其中积极情感出现2次，消极情感出现1次，中性情感出现2次。而从评论中可以感受到听众对这首歌的情感，积极情感出现12次，消极情感出现1次，中性情感出现7次。总体而言，听众对这首歌曲的情感评价较为积极。" 
+}}
+{id=2098358305,name=VALENTINE,songer=Måneskin,emotion={
+  "summary": "这首歌曲《VALENTINE》表达了一种深情的爱情情感。歌词中描述了对爱人的思念和渴望，以及对爱情的痴迷和害怕失去的恐惧。评论中的观众也表达了对这首歌的喜爱和认同，认为它有独特的风格和质感。鼓声、电吉他和贝斯的合奏给人留下了深刻的印象。总的来说，这首歌曲引发了观众们对爱情的共鸣和情感的共鸣，给人带来了一种宁静而深沉的感觉。"
+}}
+{id=2097672556,name=Different Kind Of Beautiful (Piano Version),songer=Alec Benjamin,emotion={
+  "SongSentiment": {
+    "song_name": {
+      "sentiment": "scared",
+      "intensity": "strong"
+    },
+    "lyrics": {
+      "sentiment": "scared",
+      "intensity": "strong"
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "sentiment": "admiration",
+      "intensity": "moderate"
+    }
+  },
+  "Summary": "这首歌曲《Different Kind Of Beautiful (Piano Version)》表达了一种强烈的害怕情感，歌名和歌词中都体现出这种情感。评论中的情感以钦佩为主，情感强度适中。总的来说，这首歌曲引发了听众对于美的不同种类的思考，并且在情感上产生了共鸣。" 
+}}
+{id=2097155567,name=Spectre 2.0,songer=Alan Walker,emotion={
+  "Summary": "这首歌曲《Spectre 2.0》情感丰富，歌曲本身情感表达了希望找到光明、寻找答案、追求爱情的情感。歌词中的重复出现的词语和短语，如“Hello Hello”、“Keep me company”等，表达了强烈的情感。评论中的观众情感也多样，有人赞扬歌曲的水平提高，有人对歌曲的音色和旋律赞赏，也有人对歌曲的发行量表示不满。总体而言，观众对这首歌曲的情感评价较为积极，认为它具有回忆、感动和青春的意义。"
+}}
+{id=2100459278,name=Thank You (Not So Bad),songer=Dimitri Vegas & Like Mike,emotion={
+  "Summary": "这首歌曲《Thank You (Not So Bad)》的情感分析结果如下：歌曲本身情感为积极向上，表达了对生活的感激和乐观态度。歌词中的重复出现的歌词和歌名都强调了这种情感。听众情感中，评论中的情感较为复杂，有积极和消极的评论，但整体情感倾向积极。评论中提到的音乐质量、配器、编排等方面的评价较为一致，认为单调且缺乏创新。总体而言，观众对这首歌曲的情感评价较为正面，但对音乐质量有一定的批评意见。"
+}}
+{id=2094848559,name=Cinema,songer=Galdive,emotion={
+  "SongSentiment": {
+    "song_name": "Cinema",
+    "lyrics": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 12,
+    "negative": 0,
+    "neutral": 7
+  },
+  "Summary": "歌曲《Cinema》的情感分析结果显示，歌曲本身情感中，歌名和歌词表达的情感主要为积极情绪，没有明显的消极情绪。听众的情感中，积极情绪占主导，有12条积极评论，7条中立评论，没有明显的消极评论。总体而言，这首歌曲给人带来了积极的情感体验。" 
+}}
+{id=2102218797,name=rainy hesitations,songer=MVNTIS,emotion={
+  "SongSentiment": {
+    "song_name": "rainy hesitations",
+    "lyrics": "",
+    "sentiment": "neutral"
+  },
+  "ListenerSentiment": {
+    "comments": [
+      "封面好美\n",
+      "还有哪个版本\n",
+      "好家伙！我直接原地结婚",
+      "喜欢夏伊洛2年了",
+      "好多版本…",
+      "oi",
+      "喜欢这种",
+      "oi",
+      "oi",
+      "oi",
+      "晚上好",
+      "我好早",
+      "oi",
+      "oi",
+      "雨夜，和你在小路上散步，扑面的晚风中夹杂着青苔的清香",
+      "oi",
+      "oi"
+    ],
+    "sentiment_summary": "这首歌曲引起了听众的积极情感，评论中表达了喜欢、美好、喜欢这种等积极情绪。封面美丽，有人表示喜欢夏伊洛已经两年了。评论中的oi可能是表示兴奋或喜爱的表达。有人描述了在雨夜和伴侣散步的情景，表达了浪漫的情感。总体而言，听众对这首歌曲持有积极的情感态度。"
+  }
+}}
+{id=2080057492,name=Let Her Go (Anniversary Edition),songer=Passenger,emotion={
+  "summary": "这首歌曲是《Let Her Go (Anniversary Edition)》，歌曲本身情感表达了对失去的爱的思念和后悔，歌词中反复强调了只有在失去后才能意识到爱的重要性。听众的评论中也表达了对这首歌的喜爱和共鸣，有人表示这首歌让他们想起了过去的回忆，有人称赞了歌曲的版本。总的来说，这首歌曲引发了听众的情感共鸣，让他们回忆起过去的爱情经历。"
+}}
+{id=2098403368,name=Have Yourself A Merry Little Christmas,songer=Norah Jones,emotion={
+  "SongSentiment": {
+    "song_name": "Have Yourself A Merry Little Christmas",
+    "lyrics": {
+      "positive": 2,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 16,
+    "negative": 0,
+    "neutral": 0
+  },
+  "Summary": "这首歌曲《Have Yourself A Merry Little Christmas》传递了积极的情感，歌词中表达了对圣诞节的喜悦和对未来的希望。听众对这首歌的情感也非常积极，评论中充满了对歌曲的喜爱和期待圣诞节的祝福。这首歌曲能够给人带来快乐和温暖的感觉，适合在圣诞节期间欣赏。"
+}}
+{id=2098373270,name=Maybe Man,songer=AJR,emotion={
+  "summary": "这首歌曲《Maybe Man》表达了歌手对自己身份和情感的迷茫和不确定。歌词中反复出现的情感词汇表达了强烈的情感，如“miss”、“glad”、“cry”、“love”等。评论中也有听众对这首歌的积极评价，认为它能缓解焦虑、充满生命力。综合来看，这首歌曲的情感是复杂而深刻的，既有迷茫和不确定，又有积极向上的力量。"
+}}
+{id=2103801778,name=Tears On The Dancefloor (feat. Hannah Boleyn) [Night Mode],songer=KSHMR,emotion={
+  "SongSentiment": {
+    "song_name": {
+      "emotion": "positive",
+      "intensity": "strong"
+    },
+    "lyrics": {
+      "emotion": "positive",
+      "intensity": "moderate"
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "emotion": "positive",
+      "intensity": "moderate"
+    }
+  },
+  "Summary": "这首歌曲《Tears On The Dancefloor (feat. Hannah Boleyn) [Night Mode]》表达了积极向上的情感，歌名和歌词中都体现了这种情感。评论中的观众情感也是积极向上的，尽管情感强度适中。总的来说，这首歌曲给人带来了积极的情绪和愉悦的感觉。" 
+}}
+{id=2097156146,name=Welcome to Walkerworld,songer=Alan Walker,emotion={
+  "Summary": "这首歌曲名为《Welcome to Walkerworld》，歌词中表达了对未知世界的探索和梦想的诞生，给人一种远离家乡却仍然感觉像家的感觉。从评论中可以看出，听众对这首歌曲的评价非常高，认为现场表演非常精彩，激动到情绪失控。开场曲给人留下了深刻的印象，被认为非常适合作为开场曲。总的来说，这首歌曲在听众中引起了强烈的情感共鸣，给人带来了无敌的炸裂感。"
+}}
+{id=2098587012,name=Focalors Sacrifice Theme,songer=Midnight City Music,emotion={
+  "summary": "《Focalors Sacrifice Theme》是一首情感丰富的歌曲。从歌名和评论中可以感受到听众对这首歌的情感投入。歌曲本身情感无法从歌词中获取，但是评论中的一些表达可以反映出听众的情感。评论中出现了一些表达悲伤、感动、支持的词语，说明这首歌曲引发了听众的共鸣。尽管歌曲本身情感无法确定，但是可以肯定的是这首歌曲在听众中引起了强烈的情感反应。"
+}}
+{id=2040284294,name=Everything Is You,songer=Revemont,emotion={
+  "SongSentiment": {
+    "song_name": "Everything Is You",
+    "lyrics": "",
+    "sentiment": "unknown"
+  },
+  "ListenerSentiment": {
+    "comments": [
+      "晚安",
+      "今天就到此为止吧，好好睡觉，陌生人🏼",
+      "晚安(ᴗ˳ᴗ)🌙",
+      "晚安",
+      "晚安",
+      "晚安",
+      "晚安 ",
+      "午安",
+      "晚安",
+      "我要永远相信自己",
+      "晚安💤",
+      "晚安",
+      "晚安",
+      "晚安",
+      "晚安陌生人",
+      "晚安，世界",
+      "晚安 玛卡巴卡～",
+      "希望一觉醒来明天就能打起精神好好做事情",
+      "曾以为的来日方长，可一转身便是人走茶凉",
+      "美梦\n"
+    ],
+    "sentiment": "unknown"
+  },
+  "Summary": "这首歌曲《Everything Is You》的情感分析结果尚不明确。根据歌曲本身情感和听众评论，无法确定具体的情感倾向。建议进一步分析歌曲的歌词和更多的评论来获取更准确的情感分析结果。"
+}}
+{id=2090737128,name=U Miss Me,songer=Vicetone,emotion={
+  "Summary": "这首歌曲《U Miss Me》表达了一种强烈的情感，歌名和歌词中多次出现的“miss me”表明了歌曲本身情感的强烈。从评论中可以看出，听众对这首歌曲的评价也很积极，认为这首歌很棒、好听，并且有一些评论表达了对歌曲中情感的共鸣。总的来说，这首歌曲引发了听众的强烈情感共鸣，让人们回忆起过去的感情经历，体验到了一种深刻的情感体验。"
+}}
+{id=2096313502,name=Et si c'était nous deux ?,songer=Molière l'opéra urbain,emotion={
+  "summary": "这首歌曲《Et si c'était nous deux ?》表达了爱情的复杂性和危险性。歌词中提到了欢乐和悲伤的日子，以及爱情中的承诺和伤痛。歌曲传达了一种矛盾的情感，既有对爱情的渴望和追求，又有对爱情的怀疑和恐惧。评论中的观众情感也反映了对这首歌的喜爱和共鸣。总的来说，这首歌曲引发了听众对爱情的深思和情感共鸣。"
+}}
+{id=2097876792,name=Goes Like This,songer=Hardwell,emotion={
+  "summary": "这首歌曲《Goes Like This》的情感分析结果如下：\n\n歌曲本身情感：\n- 歌名《Goes Like This》传达出一种欢快、轻松的情感。\n- 歌词中反复出现的旋律描述了一种梦幻、回忆的情感。\n\n听众情感：\n- 评论中出现了一些积极的情感，如感谢、生日快乐祝福等。\n- 也有一些负面情感，如迟到、不了解等。\n\n综合来看，这首歌曲给听众带来了一种欢快、轻松的情感，同时也引发了一些回忆和思考。"
+}}
+{id=2092150480,name=I Wish You Were Here (Stripped),songer=Billy Raffoul,emotion={
+  "Summary": "这首歌曲《I Wish You Were Here (Stripped)》表达了对失去的爱人的思念和痛苦。歌词中反复强调了没有爱人在身边的一年有多么艰难，以及对爱人的深深思念。评论中的听众也纷纷表示被歌曲打动，有人形容声线无了我，有人说开口就戳到我的心巴上。从歌曲本身和听众的反馈来看，这首歌曲的情感是悲伤和思念。"
+}}
+{id=2099732366,name=Tears On The Dancefloor (feat. Hannah Boleyn),songer=KSHMR,emotion={
+  "summary": "这首歌曲《Tears On The Dancefloor (feat. Hannah Boleyn)》表达了一种积极向上的情感。从歌名和歌词中可以感受到歌曲本身情感的力量和能量，歌词中提到了跳舞、爱和眼泪等元素，表达了对失去的爱情的释放和超越。评论中的情感也大多是积极的，表达了对歌曲和歌手的喜爱和支持。整体上，这首歌曲给人一种积极向上、充满希望和力量的情感体验。"
+}}
+{id=2100459310,name=Stars,songer=Tai Verdes,emotion={
+  "Summary": "这首歌《Stars》表达了一种复杂的情感，歌曲本身情感中体现了一种带有痛苦和困扰的情绪，歌词中的重复出现的歌词表达了情感的强烈。听众的评论中也体现了对这首歌的喜爱和赞赏，但也有一些听众觉得这首歌有点吓人。总的来说，这首歌引发了听众们不同的情感体验，有些人被歌曲的情感所吸引，有些人则觉得有些恐怖。"
+}}
+{id=2100475488,name=Water (Remix),songer=Tyla,emotion={
+  "summary": "这首歌曲《Water (Remix)》充满了热情和活力。歌名和歌词中的词语表达了流汗、失去呼吸的感觉，强烈传达了情感。评论中的观众也表达了喜欢和赞赏的情感。整体而言，这首歌曲给人一种充满活力和渴望的感觉。"
+}}
+{id=2104631801,name=All I Want For Christmas Is You,songer=Kidz Bop Kids,emotion={
+  "SongSentiment": {
+    "song_name": "All I Want For Christmas Is You",
+    "lyrics": {
+      "positive": 10,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "positive": 5,
+      "negative": 0,
+      "neutral": 3
+    }
+  },
+  "Summary": "这首歌曲《All I Want For Christmas Is You》表达了对圣诞节的喜爱和对爱人的渴望。歌词中的重复出现和积极的情感词语传达了强烈的情感。评论中的积极情绪反映了听众对这首歌的喜爱和认同。总的来说，这首歌曲在听众中引起了积极的情感共鸣。" 
+}}
+{id=2102418252,name=Yig'lama qiz,songer=Shohruhxon,emotion={
+  "Summary": "这首歌曲《Yig'lama qiz》表达了失去和思念的情感。歌曲本身情感通过歌名体现，而歌词中没有明确的情感表达。从评论中可以感知到听众的情感，其中有人表达了对过去感情的思念和难过，也有人对歌手的唱功和歌曲的旋律表示赞赏。总体来说，这首歌曲引发了听众对失去和爱情的思考和回忆。"
+}}
+{id=2098015460,name=Stutter,songer=Chris Brown,emotion={
+  "SongSentiment": {
+    "song_name": "Stutter",
+    "lyrics": {
+      "positive": 3,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 10,
+    "negative": 0,
+    "neutral": 0
+  },
+  "Summary": "歌曲《Stutter》的情感分析结果显示，歌曲本身情感以积极为主，歌词中表达了对某人的喜欢和对感情的迷恋。听众的情感也非常积极，评论中出现了很多赞美和喜爱的词语。总体而言，这首歌曲给人带来了积极的情感体验，让人感到愉悦和甜蜜。" 
+}}
+{id=2088403461,name=all out of love,songer=Ouse,emotion={
+  "Summary": "这首歌曲《All Out of Love》表达了失恋后的心情，歌词中充满了伤感和失落的情绪。歌名和歌词中多次出现的词语“all out of love”强烈地传达了情感的强烈度。评论中也有很多听众表示被这首歌打动，认为它很好听，让人感到幸福。综合来看，这首歌曲的情感是悲伤和失落，但也带有一丝希望和幸福的感觉。"
+}}
+{id=2087846668,name=Blame,songer=Great Good Fine OK,emotion={
+  "SongSentiment": {
+    "song_name": "Blame",
+    "lyrics": {
+      "positive": 0,
+      "negative": 3,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 6,
+    "negative": 2,
+    "neutral": 12
+  },
+  "Summary": "歌曲《Blame》的情感分析结果显示，歌曲本身情感偏向消极，表达了责备和承担责任的情感。听众的情感以中性为主，其中积极情感略多于消极情感。评论中出现了一些积极的评价，认为这首歌简单但好听。总体而言，这首歌曲引发了听众的共鸣，但情感倾向较为复杂。"
+}}
+{id=2097156323,name=Yesterday,songer=Alan Walker,emotion={
+  "SongSentiment": {
+    "song_name": "Yesterday",
+    "lyrics": {
+      "positive": 0,
+      "negative": 2,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "comments": {
+      "positive": 6,
+      "negative": 2,
+      "neutral": 12
+    }
+  },
+  "Summary": "根据歌曲《Yesterday》的情感分析结果，歌曲本身情感主要表现为消极情绪，歌词中表达了失去和思念的情感。而听众的情感则相对中性，评论中积极和消极情感的数量相对较少，大部分评论是中性的。总体来说，这首歌曲引发了听众对失去和思念的共鸣，但并没有明显的情感倾向。" 
+}}
+{id=2090073695,name=Black Windows (Slowed),songer=WYR GEMI,emotion={
+  "SongSentiment": {
+    "song_name": "Black Windows (Slowed)",
+    "lyrics": "纯音乐，请欣赏"
+  },
+  "ListenerSentiment": {
+    "comments": [
+      "羔羊总是成群，猛虎才独行",
+      "wow",
+      "豪车配硬曲+好酒配美女＝男人的乐趣",
+      "怎么还能发语音呢",
+      "宝贝们，让我们嗨起来好吗[狗头]",
+      "it's fucking nice",
+      "vocal小小小世界",
+      "我就是运动时候听…但是我看评论区…你们都是撒人时候听是吧",
+      "2023.11.16在此铭志，到时候作为第一辆黑武士的BGM",
+      "好好好",
+      "劳资用音箱",
+      "牛掰",
+      "一般人听不到，听到的不是一般人[多多耍酷]",
+      "来了哥几个",
+      "耳机提示：音量过大\n我：你听还是我听？",
+      "Were are you doing?\n\n",
+      "slow",
+      "音量调大，让脑子抖起来",
+      " 啊 你也chow len fan",
+      "走在路上突然抬头挺胸拽起来了我[多多耍酷][多多耍酷]"
+    ]
+  }
+}}
+{id=2103622477,name=Falling Into Mystery,songer=MitiS,emotion={
+  "Summary": "这首歌曲《Falling Into Mystery》传递了一种积极向上的情感，歌词中表达了对未知的勇敢探索和对爱情的执着追求。评论中大部分是对歌曲的赞美和喜爱，认为歌曲温柔动人，给人暖心的感觉。整体上，这首歌曲给人一种希望和乐观的情感体验。"
+}}
+{id=2101476059,name=My R,songer=Will Stetson,emotion={
+  "SongSentiment": {
+    "song_name": "My R",
+    "lyrics": {
+      "positive": 2,
+      "negative": 3,
+      "neutral": 2
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 6,
+    "negative": 3,
+    "neutral": 11
+  },
+  "Summary": "根据歌曲《My R》的情感分析结果，歌曲本身情感中，歌词中表达的负面情感较多，包括失望、愤怒和孤独等。听众情感中，评论中的中性情感较多，积极情感次之，消极情感最少。总体而言，歌曲《My R》传达了一种负面情绪，但也引发了听众的共鸣和喜爱。"}
+{id=2098383825,name=he never will,songer=Alexander Stewart,emotion={
+  "Summary": "这首歌曲的情感分析结果显示，歌曲本身情感主要表达了失望和坚决放手的情感。歌词中反复强调了对方不知道自己拥有什么，不知道自己想要什么，以及对方不会改变的事实。听众的评论也表达了对这种情感的认同和共鸣，认为歌曲的歌词非常真诚，能够唤醒恋爱中迷失的自己。总的来说，这首歌曲传达了一种坚决放手的情感，鼓励听众不要再为不值得的人苦苦等待。"
+}}
+{id=2099878119,name=Winter Song,songer=Zara Larsson,emotion={
+  "Summary": "这首歌曲《Winter Song》表达了冬天的寒冷和孤独感，歌词中的冬天、风、冷、孤独等词语传递出一种悲伤和失落的情感。评论中的一些内容也反映了听众对冬天的不喜欢和孤独感的共鸣。整体而言，这首歌曲的情感是悲伤和孤独，与冬天的氛围相符合。"
+}}
+{id=2104661835,name=MY HOUSE,songer=Beyoncé,emotion={
+  "summary": "这首歌《MY HOUSE》是一首充满自信和力量的歌曲。从歌名和歌词中可以感受到歌曲本身情感的强烈，表达了对自己的肯定和对他人的挑战。评论中的观众情感也较为积极，大部分评论都表达了对歌曲的喜爱和支持。整体上，这首歌曲传递了一种积极向上的情感，能够激发听众的自信和勇气。"
+}}
+{id=2103930835,name=Woke Up,songer=Gunna,emotion={
+  "Summary": "这首歌曲《Woke Up》表达了一种自信和醒悟的情感。歌词中的强烈自豪感和对自身能力的肯定，以及对金钱和物质的追求，展现了歌曲本身情感。评论中的观众情感主要集中在对歌曲的认同和喜爱上。整体而言，这首歌曲传递出一种积极向上的情感，让人感到振奋和充满动力。"
+}}
+{id=2094777158,name=Fall And Rise,songer=X-Ray Dog,emotion={
+  "SongSentiment": {
+    "song_name": "Fall And Rise",
+    "sentiment": "neutral"
+  },
+  "ListenerSentiment": {
+    "comments": [
+      {
+        "comment": "极尽升华～",
+        "sentiment": "positive"
+      },
+      {
+        "comment": "火钳刘明[色]",
+        "sentiment": "positive"
+      },
+      {
+        "comment": "Fall And Rise 兴衰……🌍……",
+        "sentiment": "neutral"
+      }
+    ],
+    "summary": "这首歌曲《Fall And Rise》在听众中引起了积极的情感共鸣，评论中出现了积极的评价，如“极尽升华～”和“火钳刘明[色]”。然而，也有一些评论表达了中立的情感。总体而言，听众对这首歌曲的情感评价较为正面。"
+  }
+}}
+{id=2089787380,name=Forget About You (with Pink Sweat$),songer=Devin Kennedy,emotion={
+  "SongSentiment": {
+    "song_name": "Forget About You (with Pink Sweat$)",
+    "lyrics": {
+      "positive": 3,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 7,
+    "negative": 1,
+    "neutral": 11
+  },
+  "Summary": "这首歌曲《Forget About You (with Pink Sweat$)》表达了对过去感情的无法忘怀，歌词中反复强调了无法忘记对方的情感。听众的评论中，大部分是中性的，但也有一些积极的评论。总的来说，这首歌曲引发了听众对过去感情的共鸣，让人们回忆起自己的情感经历。" 
+}}
+{id=2100524458,name=Swim,songer=Reneé Rapp,emotion={
+  "summary": "这首歌《Swim》表达了一种复杂的情感，歌曲本身情感中体现了对爱情的迷茫和困惑，以及对与恋人分离的渴望。歌词中的重复和反复出现的情感词语增强了情感的强烈性。评论中的观众情感主要集中在对歌曲的赞美和喜爱上，表达了对歌曲的认同和共鸣。总体而言，这首歌曲引发了听众的积极情感，让人感到舒适和愉悦。"
+}}
+{id=2096313508,name=T'aimer est une galère,songer=Molière l'opéra urbain,emotion={
+  "summary": "这首歌曲《T'aimer est une galère》表达了一种深情的爱意，歌词中充满了对爱人的执着和牺牲。歌曲本身情感中，歌名和歌词都表达了对爱人的深情厚意。评论中的听众情感也充满了对这首歌的喜爱和感动，评论中出现了很多赞美的词语，如“仙曲”、“爱了”、“太好听了”等。整体上，这首歌曲给人一种浓烈的爱情情感，让人感受到了深深的情感共鸣。"
+}}
+{id=2096051947,name=No Bad Side,songer=Connor Price,emotion={
+  "SongSentiment": {
+    "song_name": "No Bad Side",
+    "lyrics": {
+      "positive": 5,
+      "negative": 2,
+      "neutral": 3
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 10,
+    "negative": 2,
+    "neutral": 8
+  },
+  "Summary": "根据歌曲《No Bad Side》的情感分析结果，歌曲本身情感中，歌名和歌词表达了积极的情感，其中积极情感出现的次数较多。听众情感中，评论中的积极情感较多，但也有少量的消极情感。总体而言，这首歌曲传递了积极的情感，给人带来了愉悦和欢乐的感觉。" 
+}}
+{id=2103580032,name=All Out Of Fight,songer=P!nk,emotion={
+  "summary": "这首歌曲《All Out Of Fight》表达了一种失去斗志、失去爱和生活动力的情感。歌词中反复强调了“我已经没有战斗的力气、没有爱、没有生活的意义”，表达了歌曲本身的情感。评论中的观众情感也体现了对歌曲的共鸣和喜爱，评论中出现了一些表达喜欢和感动的词语。总的来说，这首歌曲传达了一种失落和无力的情感，但同时也带有一丝希望和坚持的力量。"
+}}
+{id=2097180356,name=Donut (《此時此刻》插曲),songer=Everydaze,emotion={
+  "Summary": "这首歌曲《Donut (《此時此刻》插曲)》表达了一种复杂的情感，既有歌曲本身情感，又有听众情感。从歌名和歌词来看，歌曲本身情感主要是温暖、浪漫和回忆。歌词中的表达方式和旋律给人带来意外的好听感受。而从评论中可以看出，听众对这首歌曲的情感也非常积极，有人表示很久不见，有人说好爱，还有人说好喜欢。总的来说，这首歌曲引发了听众的共鸣，让人感受到了温暖和甜蜜的情感。"
+}}
+{id=2099641623,name=Gimme Love (Reasonable Woman Version),songer=Sia,emotion={
+  "SongSentiment": {
+    "song_name": "Gimme Love (Reasonable Woman Version)",
+    "lyrics": {
+      "positive": 6,
+      "negative": 0,
+      "neutral": 0
+    }
+  },
+  "ListenerSentiment": {
+    "positive": 12,
+    "negative": 0,
+    "neutral": 8
+  },
+  "Summary": "这首歌曲《Gimme Love (Reasonable Woman Version)》表达了强烈的情感，歌词中反复出现的词语表达了对爱的渴望和期待。听众对这首歌的情感也非常积极，评论中多数是赞美和喜爱的声音。总的来说，这首歌曲传递了积极向上的情感，能够带给人们快乐和希望。" 
+}}

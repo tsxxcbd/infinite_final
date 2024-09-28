@@ -17,7 +17,7 @@ public interface UserDao extends BaseMapper<User> {
             " values(#{username},#{password},now(),#{likelistId})")
     void add(String username, String password,Long likelistId);
 
-    @Select("select * from user where id=#{id}")
-    User findById(int id);
+    @Select("select * from user where userid=#{userid}")
+    User findById(int userid);
 }
 

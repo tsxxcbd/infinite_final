@@ -16,7 +16,7 @@ public class UserInfoServiceImpl extends ServiceImpl<UserDao, User> implements U
     @Autowired
     UserDao userDao;
 
-    public User findById(int userId){
+    public User findById(int userId)throws Exception{
 
         User user = userDao.findById(userId);
         return user;
@@ -24,14 +24,14 @@ public class UserInfoServiceImpl extends ServiceImpl<UserDao, User> implements U
     }
     //获取用户
     @Transactional
-    public User getUser(int userId) {
+    public User getUser(int userId) throws Exception{
         User user = findById(userId);
         //如果找不到对象，在controller层包装
         return user;
     }
 
     //获取用户的likelistid
-    public int getlikelistid(int userId) {
+    public int getlikelistid(int userId) throws Exception{
         User user = findById(userId);
         //如果找不到对象，在controller层包装
         return user.getLikelistId();
@@ -39,7 +39,7 @@ public class UserInfoServiceImpl extends ServiceImpl<UserDao, User> implements U
 
     //likelist_id
     //获取用户的用户名
-    public String getusername(int userId) {
+    public String getusername(int userId) throws Exception{
 
         User user = findById(userId);
         //如果找不到对象，在controller层包装

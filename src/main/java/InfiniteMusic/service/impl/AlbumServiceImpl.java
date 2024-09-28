@@ -17,29 +17,39 @@ public class AlbumServiceImpl extends ServiceImpl<AlbumDao, Album> implements Al
     AlbumDao albumDao;
 
     @Transactional
-    public int addAlbum(String name ,int musician_id){
+    public int addAlbum(String name ,int musician_id)throws Exception {
 
-        if(findbynameid(name,musician_id)==null){
+        try {
+            if (findbynameid(name, musician_id) == null) {
 
-            Album album = new Album();
-            album.setName(name);
-            album.setMusician_id(musician_id);
-            albumDao.insert(album);
-            return album.getAlbumid();
+                Album album = new Album();
+                album.setName(name);
+                album.setMusicianid(musician_id);
+                albumDao.insert(album);
+                return album.getAlbumid();
 
-        }else{
+            } else {
 
-            return findbynameid(name,musician_id).getAlbumid();
+                return findbynameid(name, musician_id).getAlbumid();
 
+            }
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
         }
+
 
     }
 
-    public Album findbynameid(String name,int musician_id){
+    public Album findbynameid(String name,int musician_id) throws Exception{
 
         LambdaQueryWrapper<Album> lqw = new LambdaQueryWrapper<Album>();
-        lqw.eq(Album::getName,name).eq(Album::getMusician_id,musician_id);
-        return albumDao.selectOne(lqw);
+        lqw.eq(Album::getName,name).eq(Album::getMusicianid,musician_id);
+        Album album = albumDao.selectOne(lqw);
+        if(album!=null){
+            return album;
+        }else{
+            throw new Exception("该专辑信息不存在");
+        }
     }
 
 }

@@ -20,68 +20,103 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
 
     //添加用户歌单（创建）
     @Transactional
-    public void addPlayListCreate(int userId,int playListId) {
-        User_PlayList user_PlayList = new User_PlayList(userId,playListId,true);
-        userPlayListDao.insert(user_PlayList);//添加到用户的创建歌单列表
+    public void addPlayListCreate(int userId,int playListId) throws Exception{
+
+        try{
+            User_PlayList user_PlayList = new User_PlayList(userId,playListId,true);
+            userPlayListDao.insert(user_PlayList);//添加到用户的创建歌单列表
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
     //添加用户歌单（收藏）
     @Transactional
-    public void addPlayListLike(int userId,int playListId) {
-        User_PlayList user_PlayList = new User_PlayList(userId,playListId,false);
-        userPlayListDao.insert(user_PlayList);//添加到用户的喜欢歌单列表
+    public void addPlayListLike(int userId,int playListId) throws Exception{
+
+        try{
+            User_PlayList user_PlayList = new User_PlayList(userId,playListId,false);
+            userPlayListDao.insert(user_PlayList);//添加到用户的喜欢歌单列表
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
 
     //删除创建用户的歌单
     @Transactional
-    public void deleteCreatePlayList(int playListId) {
-        LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-        lqw.eq(User_PlayList::getPlaylistid,playListId).
-                eq(User_PlayList::isCreateorlike,true);
-        userPlayListDao.delete(lqw);
+    public void deleteCreatePlayList(int playListId)throws Exception {
+
+        try{
+            LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
+            lqw.eq(User_PlayList::getPlaylistid,playListId).
+                    eq(User_PlayList::isCreateorlike,true);
+            userPlayListDao.delete(lqw);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
     //删除用户喜欢的歌单
-    public void deleteLikePlayList(int userid ,int playListId) {
-        LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-        lqw.eq(User_PlayList::getPlaylistid,playListId).
-                eq(User_PlayList::isCreateorlike,false).
-                eq(User_PlayList::getUserid,userid);
-        userPlayListDao.delete(lqw);
+    public void deleteLikePlayList(int userid ,int playListId) throws Exception{
+
+        try{
+            LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
+            lqw.eq(User_PlayList::getPlaylistid,playListId).
+                    eq(User_PlayList::isCreateorlike,false).
+                    eq(User_PlayList::getUserid,userid);
+            userPlayListDao.delete(lqw);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
    //查询用户创建的歌单的id
-    public List<Integer> getCreateListId(int userId) {
-        LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-        lqw.eq(User_PlayList::getUserid,userId).
-                eq(User_PlayList::isCreateorlike,true);
-        List<User_PlayList> user_PlayList=userPlayListDao.selectList(lqw);
-        List<Integer> lists = new ArrayList<>();
-        for(User_PlayList userPlayList:user_PlayList){
-            lists.add(userPlayList.getPlaylistid());
+    public List<Integer> getCreateListId(int userId)throws Exception {
+
+        try{
+            LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
+            lqw.eq(User_PlayList::getUserid,userId).
+                    eq(User_PlayList::isCreateorlike,true);
+            List<User_PlayList> user_PlayList=userPlayListDao.selectList(lqw);
+            List<Integer> lists = new ArrayList<>();
+            for(User_PlayList userPlayList:user_PlayList){
+                lists.add(userPlayList.getPlaylistid());
+            }
+            return lists;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
         }
-        return lists;
     }
 
     //查询用户喜欢的歌单的id
-    public List<Integer> getLikeListId(int userId) {
-        LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-        lqw.eq(User_PlayList::getUserid,userId).eq(User_PlayList::isCreateorlike,false);
-        List<User_PlayList> user_PlayList=userPlayListDao.selectList(lqw);
-        List<Integer> lists = new ArrayList<>();
-        for(User_PlayList userPlayList:user_PlayList){
-            lists.add(userPlayList.getPlaylistid());
+    public List<Integer> getLikeListId(int userId) throws Exception{
+
+        try{
+            LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
+            lqw.eq(User_PlayList::getUserid,userId).eq(User_PlayList::isCreateorlike,false);
+            List<User_PlayList> user_PlayList=userPlayListDao.selectList(lqw);
+            List<Integer> lists = new ArrayList<>();
+            for(User_PlayList userPlayList:user_PlayList){
+                lists.add(userPlayList.getPlaylistid());
+            }
+            return lists;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
         }
-        return lists;
     }
 
     //查询一个歌单的创建者
-    public int getListCreator(int playListId){
-        LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-        lqw.eq(User_PlayList::getPlaylistid,playListId).eq(User_PlayList::isCreateorlike,true);
-        User_PlayList userPlay=userPlayListDao.selectOne(lqw);
-        return userPlay.getUserid();
+    public int getListCreator(int playListId)throws Exception{
+
+        try{
+            LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
+            lqw.eq(User_PlayList::getPlaylistid,playListId).eq(User_PlayList::isCreateorlike,true);
+            User_PlayList userPlay=userPlayListDao.selectOne(lqw);
+            return userPlay.getUserid();
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
 }

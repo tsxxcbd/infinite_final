@@ -228,7 +228,7 @@ public class PlayListController {
     }
 
     @ApiOperation("用户收藏歌单")
-    @GetMapping(value = "/Likelists",produces = {"application/json;charset=utf-8"})
+    @PostMapping(value = "/Likelists",produces = {"application/json;charset=utf-8"})
     public String LikeLists(@RequestBody User_PlayList user_playList)throws Exception{
 
         try{
@@ -243,7 +243,7 @@ public class PlayListController {
     }
 
     @ApiOperation("用户取消收藏歌单")
-    @GetMapping(value = "/Disikelists",produces = {"application/json;charset=utf-8"})
+    @DeleteMapping(value = "/Disikelists",produces = {"application/json;charset=utf-8"})
     public String DislikeLists(@RequestBody User_PlayList user_playList)throws Exception{
 
         try{
@@ -258,7 +258,7 @@ public class PlayListController {
     }
 
     @ApiOperation("用户喜欢歌曲")
-    @GetMapping(value = "/Likesong",produces = {"application/json;charset=utf-8"})
+    @PostMapping(value = "/Likesong",produces = {"application/json;charset=utf-8"})
     public String Likesong(@RequestBody UserSongDto userSongDto)throws Exception{
 
         try{
@@ -274,7 +274,7 @@ public class PlayListController {
     }
 
     @ApiOperation("用户取消喜欢歌曲")
-    @GetMapping(value = "/Dislikesong",produces = {"application/json;charset=utf-8"})
+    @DeleteMapping(value = "/Dislikesong",produces = {"application/json;charset=utf-8"})
     public String dislikesong(@RequestBody UserSongDto userSongDto)throws Exception{
 
         try{

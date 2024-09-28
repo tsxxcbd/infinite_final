@@ -22,54 +22,79 @@ public class PlayList_SongServiceImpl extends ServiceImpl<PlayList_SongDao, Play
     //包括对歌单内增加歌曲，减少歌曲和查询，传输类型为单个或列表
     //增加单个歌曲
     @Transactional
-    public void addOneSong(int playListId,int songId) {
-        PlayList_Song playList_song = new PlayList_Song(playListId,songId);
-        playListSongDao.insert(playList_song);
+    public void addOneSong(int playListId,int songId)throws Exception {
+
+        try{
+            PlayList_Song playList_song = new PlayList_Song(playListId,songId);
+            playListSongDao.insert(playList_song);
+        }catch (Exception e){
+            throw new Exception(e);
+        }
     }
 
     //添加一列表的歌曲
     @Transactional
-    public void addAllSong(int playListId, List<Integer> songIdList){
-        for(int songId:songIdList){
-            addOneSong(playListId,songId);
+    public void addAllSong(int playListId, List<Integer> songIdList)throws Exception{
+
+        try{
+            for(int songId:songIdList){
+                addOneSong(playListId,songId);
+            }
+        }catch (Exception e){
+            throw new Exception(e);
         }
     }
 
     //删除单个歌曲
     @Transactional
-    public void deleteOneSong(int playListId,int songId) {
-        LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
-        lqw.eq(PlayList_Song::getPlaylistid,playListId).eq(PlayList_Song::getSongid,songId);
-        playListSongDao.delete(lqw);
+    public void deleteOneSong(int playListId,int songId) throws Exception{
+
+        try{
+            LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
+            lqw.eq(PlayList_Song::getPlaylistid,playListId).eq(PlayList_Song::getSongid,songId);
+            playListSongDao.delete(lqw);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
+
     }
 
     //查询歌单内的所有歌曲Id
-    public List<Integer> findSongsinList(int playListId){
-        LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
-        lqw.eq(PlayList_Song::getPlaylistid,playListId);
-        List<PlayList_Song> result = playListSongDao.selectList(lqw);
-//        if(result==null){
-//
-//        }
-        List<Integer> songs = new ArrayList<>();
-        for (PlayList_Song playList_song : result) {
-             songs.add(playList_song.getSongid());
+    public List<Integer> findSongsinList(int playListId)throws Exception{
+
+        try{
+            LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
+            lqw.eq(PlayList_Song::getPlaylistid,playListId);
+            List<PlayList_Song> result = playListSongDao.selectList(lqw);
+            if(result==null){
+                throw new Exception("该歌单不存在");
+            }
+            List<Integer> songs = new ArrayList<>();
+            for (PlayList_Song playList_song : result) {
+                songs.add(playList_song.getSongid());
+            }
+            return songs;
+        }catch (Exception e){
+            throw new Exception(e);
         }
-        return songs;
     }
 
     //返回歌单的个数
-    public int finsSongsNumber(int playListId){
+    public int finsSongsNumber(int playListId)throws Exception{
         return findSongsinList(playListId).size();
     }
 
     //歌单整体操作后对关联表的影响
     //删除歌单时删去关联表
     @Transactional
-    public void deleteByListId(int playListId) {
-        LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
-        lqw.eq(PlayList_Song::getPlaylistid,playListId);
-        playListSongDao.delete(lqw);
+    public void deleteByListId(int playListId) throws Exception{
+        try {
+            LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
+            lqw.eq(PlayList_Song::getPlaylistid,playListId);
+            playListSongDao.delete(lqw);
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
     }
 
 }

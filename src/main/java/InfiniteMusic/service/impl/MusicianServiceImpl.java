@@ -17,20 +17,29 @@ public class MusicianServiceImpl extends ServiceImpl<MusicianDao, Musician> impl
 
     //添加歌手，返回歌手的id
     @Transactional
-    public int addMusician(String name){
-        if( findbyname(name) == null ){
-            Musician musician = new Musician();
-            musician.setName(name);
-            musicianDao.insert(musician);
-            return musician.getMusicianid();
-        }else{
-            return findbyname(name).getMusicianid();
+    public int addMusician(String name)throws Exception{
+        try{
+            if( findbyname(name) == null ){
+                Musician musician = new Musician();
+                musician.setName(name);
+                musicianDao.insert(musician);
+                return musician.getMusicianid();
+            }else{
+                return findbyname(name).getMusicianid();
+            }
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
         }
     }
 
-    public Musician findbyname(String name){
+    public Musician findbyname(String name)throws Exception{
         LambdaQueryWrapper<Musician> lqw = new LambdaQueryWrapper<Musician>();
         lqw.eq(Musician::getName,name);
-        return musicianDao.selectOne(lqw);
+        Musician musician = musicianDao.selectOne(lqw);
+        if(musician!=null){
+            return musician;
+        }else{
+            throw new Exception("该歌手信息不存在");
+        }
     }
 }

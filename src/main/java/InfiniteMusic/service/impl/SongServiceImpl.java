@@ -21,26 +21,29 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
 
     @Transactional
     public Song CreatSong(int song_id, String song_name,String emotion
-            ,int album_id,int musician_id,String album,String artist){
+            ,int album_id,int musician_id,String album,String artist)throws Exception{
 
-        Song song = new Song();
-        song.setSongid(song_id);
-        song.setSongname(song_name);
-        song.setEmotion(emotion);
-        song.setAlbumid(album_id);
-        song.setMusicianid(musician_id);
-        song.setAlbum(album);
-        song.setArtist(artist);
-        songDao.insert(song);
+        try {
+            Song song = new Song();
+            song.setSongid(song_id);
+            song.setSongname(song_name);
+            song.setEmotion(emotion);
+            song.setAlbumid(album_id);
+            song.setMusicianid(musician_id);
+            song.setAlbum(album);
+            song.setArtist(artist);
+            songDao.insert(song);
 
-        return song;
+            return song;
+        }catch (Exception e){
+            throw new Exception(e.getMessage());
+        }
 
     }
 
-    public List<Song> searchSong(List<Integer> songIDs) {
+    public List<Song> searchSong(List<Integer> songIDs) throws Exception{
 
         List<Song> searchResults = new ArrayList<>();
-
 
         for (int id : songIDs) {
             LambdaQueryWrapper<Song> lqw = new LambdaQueryWrapper<Song>();
@@ -53,7 +56,7 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
 
     }
 
-    public List<Song> searchAll(String keyword) {
+    public List<Song> searchAll(String keyword) throws Exception{
 
         List<Song> songs = new ArrayList<Song>();
         songs.addAll(searchBySongName(keyword));
@@ -63,7 +66,7 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
         return songs;
     }
 
-    public List<Song> searchBasicInfo(String keyword) {
+    public List<Song> searchBasicInfo(String keyword) throws Exception{
 
         List<Song> songs = new ArrayList<Song>();
         songs.addAll(searchBySongName(keyword));
@@ -74,7 +77,7 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
 
 
 
-    public List<Song> searchBySongName(String song_name) {
+    public List<Song> searchBySongName(String song_name) throws Exception{
 
         LambdaQueryWrapper<Song> lqw = new LambdaQueryWrapper<Song>();
         lqw.like(Song::getSongname, "%" + song_name + "%"); // 使用 like 方法进行模糊搜索
@@ -82,7 +85,7 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
 
     }
 
-    public List<Song> searchByArtist(String artist) {
+    public List<Song> searchByArtist(String artist) throws Exception{
 
         LambdaQueryWrapper<Song> lqw = new LambdaQueryWrapper<Song>();
         lqw.like(Song::getArtist, "%" + artist + "%"); // 使用 like 方法进行模糊搜索
@@ -90,7 +93,7 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
 
     }
 
-    public List<Song> searchByAlbum(String album) {
+    public List<Song> searchByAlbum(String album) throws Exception{
 
         LambdaQueryWrapper<Song> lqw = new LambdaQueryWrapper<Song>();
         lqw.like(Song::getAlbum, "%" + album + "%"); // 使用 like 方法进行模糊搜索
@@ -98,7 +101,7 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
 
     }
 
-    public List<Song> searchByEmotion(String emotion) {
+    public List<Song> searchByEmotion(String emotion) throws Exception{
 
         LambdaQueryWrapper<Song> lqw = new LambdaQueryWrapper<Song>();
         lqw.like(Song::getEmotion, "%" + emotion + "%"); // 使用 like 方法进行模糊搜索

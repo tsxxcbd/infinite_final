@@ -7,9 +7,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 @Data
 @TableName(value="playlist")
 public class PlayList {
@@ -17,7 +14,7 @@ public class PlayList {
     //存放歌单的细节
     @TableId(type = IdType.AUTO)
     @JsonSerialize(using = ToStringSerializer.class)
-    private int id;
+    private int playlistid;
     private String name;
     private String profile;
     private int number;

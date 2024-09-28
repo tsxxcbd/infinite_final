@@ -10,7 +10,7 @@ import lombok.Data;
 public class Musician {
 
     @TableId(type = IdType.AUTO)
-    private int id;
+    private int musicianid;
     private String name;
     private String profile;
 }

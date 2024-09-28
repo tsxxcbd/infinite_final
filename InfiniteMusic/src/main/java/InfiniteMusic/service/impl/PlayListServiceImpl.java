@@ -2,22 +2,15 @@ package InfiniteMusic.service.impl;
 
 import InfiniteMusic.dao.*;
 import InfiniteMusic.entity.PlayList;
-import InfiniteMusic.entity.Song;
-import InfiniteMusic.exception.PlayListException;
 import InfiniteMusic.service.PlayListService;
-import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class PlayListServiceImpl extends ServiceImpl<PlayListDao, PlayList> implements PlayListService {
@@ -40,13 +33,13 @@ public class PlayListServiceImpl extends ServiceImpl<PlayListDao, PlayList> impl
     public int createLikeSongList(){
         PlayList playList = new PlayList();
         playListdao.insert(playList);
-        return playList.getId();
+        return playList.getPlaylistid();
     }
 
     //获取歌单
     public PlayList getPlayList(int playlistId){
         LambdaQueryWrapper<PlayList> lqw = new LambdaQueryWrapper<PlayList>();
-        lqw.eq(PlayList::getId,playlistId);
+        lqw.eq(PlayList::getPlaylistid,playlistId);
         PlayList playList = playListdao.selectOne(lqw);
         //如果找不到对象，在controller层包装
         return playList;
@@ -64,8 +57,9 @@ public class PlayListServiceImpl extends ServiceImpl<PlayListDao, PlayList> impl
     @Transactional
     public void deletePlayList(int playlistId){
         LambdaQueryWrapper<PlayList> lqw = new LambdaQueryWrapper<PlayList>();
-        lqw.eq(PlayList::getId,playlistId);
+        lqw.eq(PlayList::getPlaylistid,playlistId);
         playListdao.delete(lqw);
     }
+
 
 }

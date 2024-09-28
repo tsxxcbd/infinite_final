@@ -1,6 +1,5 @@
 package InfiniteMusic.service.impl;
 
-import InfiniteMusic.entity.PlayList;
 import InfiniteMusic.entity.Record;
 import InfiniteMusic.dao.RecordDao;
 import InfiniteMusic.service.RecordService;
@@ -19,7 +18,7 @@ public class RecordServiceImpl extends ServiceImpl<RecordDao, Record> implements
     @Transactional
     public Record createRecord(int song_id, Data time){
         Record record = new Record();
-        record.setSong_id(song_id);
+        record.setSongid(song_id);
         record.setTime(time);
         recordDao.insert(record);
         return record;

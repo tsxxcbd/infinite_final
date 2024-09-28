@@ -10,8 +10,8 @@ import lombok.Data;
 public class Record {
 
     @TableId(type= IdType.AUTO)
-    private int record_id;
-    private int song_id;
+    private int recordid;
+    private int songid;
     private Data time;
 
 }

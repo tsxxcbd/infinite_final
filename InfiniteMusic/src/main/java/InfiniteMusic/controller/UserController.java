@@ -63,7 +63,7 @@ public class UserController {
 //        }
 //    }
     @ApiOperation("add User(User Register)")
-    @PostMapping("register1")
+    @PostMapping("/register1")
     public Result addUser(@RequestBody UserDto userDto){
         userService.addUser(userDto);
         return Result.ok();

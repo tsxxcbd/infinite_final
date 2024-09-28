@@ -25,11 +25,11 @@ public class AlbumServiceImpl extends ServiceImpl<AlbumDao, Album> implements Al
             album.setName(name);
             album.setMusician_id(musician_id);
             albumDao.insert(album);
-            return album.getId();
+            return album.getAlbumid();
 
         }else{
 
-            return findbynameid(name,musician_id).getId();
+            return findbynameid(name,musician_id).getAlbumid();
 
         }
 

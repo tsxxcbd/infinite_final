@@ -10,8 +10,8 @@ import lombok.Data;
 public class Album {
 
     @TableId(type = IdType.AUTO)
-    private int id;
+    private int albumid;
     private String name;
-    private int musician_id;
+    private int musicianid;
 
 }

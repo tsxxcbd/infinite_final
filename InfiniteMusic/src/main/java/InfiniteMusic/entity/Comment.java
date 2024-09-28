@@ -10,14 +10,14 @@ import lombok.Data;
 public class Comment {
 
     @TableId(type = IdType.AUTO)
-    private int id;
+    private int commentid;
     private String content;
-    private  int user_id;
-    private int song_id;
+    private  int userid;
+    private int songid;
     private  Data time;
 
     public Comment (int song_id, String content){
-        this.song_id=song_id;
+        this.songid =song_id;
         this.content=content;
     }
 }

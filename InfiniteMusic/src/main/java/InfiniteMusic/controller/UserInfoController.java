@@ -1,16 +1,11 @@
 package InfiniteMusic.controller;
 
-import InfiniteMusic.entity.PlayList;
 import InfiniteMusic.entity.User;
-import InfiniteMusic.exception.UserInfoException;
-import InfiniteMusic.service.UserInfoService;
-import InfiniteMusic.service.UserService;
+import InfiniteMusic.result.JsonResponse;
 import InfiniteMusic.service.impl.UserInfoServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @Api(tags = "用户信息")
@@ -21,13 +16,15 @@ public class UserInfoController {
     private UserInfoServiceImpl userInfoService;
 
     @ApiOperation("根据Id查询用户的详细信息")
-    @GetMapping("/{id}")
-    public ResponseEntity<User> getUser(@ApiParam("用户Id")@PathVariable int id) {
-        User user = userInfoService.getUser(id);
-        if(user==null){
-            return ResponseEntity.noContent().build();
-        }else{
-            return ResponseEntity.ok(user);
+    @GetMapping(value = "",produces = {"application/json;charset=utf-8"})
+    public String getUser(@RequestBody User userdto)throws Exception {
+
+        try {
+            int id = userdto.getUserid();
+            User user = userInfoService.getUser(id);
+            return JsonResponse.OK(user);
+        }catch (Exception e) {
+            return JsonResponse.Fail(e.getMessage());
         }
     }
 

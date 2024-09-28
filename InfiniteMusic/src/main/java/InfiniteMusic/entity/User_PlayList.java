@@ -6,14 +6,14 @@ import lombok.Data;
 @Data
 @TableName(value = "user_playlist")
 public class User_PlayList {
-    private int id;//用户id
-    private int playlist_id;
-    private boolean create_like;
+    private int userid;//用户id
+    private int playlistid;
+    private boolean createorlike;
 
     public User_PlayList(int userId,int playListId,boolean createOrLike) {
-        this.id=userId;
-        this.playlist_id=playListId;
-        this.create_like = createOrLike;
+        this.userid =userId;
+        this.playlistid =playListId;
+        this.createorlike = createOrLike;
         //true为创建，false为喜欢
     }
 }

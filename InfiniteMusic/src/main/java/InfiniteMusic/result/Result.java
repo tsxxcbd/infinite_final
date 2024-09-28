@@ -76,11 +76,5 @@ public class Result<T> {
     }
 
 
-
-    /*
-    * 返回的结果直接转变为json格式
-     */
-
-
 }
 

@@ -2,16 +2,12 @@ package InfiniteMusic.service.impl;
 
 import InfiniteMusic.dao.MusicianDao;
 import InfiniteMusic.entity.Musician;
-import InfiniteMusic.entity.PlayList_Song;
 import InfiniteMusic.service.MusicianService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class MusicianServiceImpl extends ServiceImpl<MusicianDao, Musician> implements MusicianService {
@@ -26,9 +22,9 @@ public class MusicianServiceImpl extends ServiceImpl<MusicianDao, Musician> impl
             Musician musician = new Musician();
             musician.setName(name);
             musicianDao.insert(musician);
-            return musician.getId();
+            return musician.getMusicianid();
         }else{
-            return findbyname(name).getId();
+            return findbyname(name).getMusicianid();
         }
     }
 

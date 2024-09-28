@@ -7,6 +7,8 @@ spring:
     username: root
     password: 3306
 
+
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+

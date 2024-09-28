@@ -2,6 +2,8 @@ package InfiniteMusic.controller;
 
 import InfiniteMusic.entity.PlayList;
 import InfiniteMusic.entity.Song;
+import InfiniteMusic.entity.dto.SongDto;
+import InfiniteMusic.result.JsonResponse;
 import InfiniteMusic.result.Result;
 import InfiniteMusic.service.CommentService;
 import InfiniteMusic.service.impl.AlbumServiceImpl;
@@ -28,18 +30,22 @@ public class SongController {
     MusicianServiceImpl  musicianService;
 
     @ApiOperation("将歌曲信息存入数据库")
-    @PostMapping("/new")
-    public Result getSong(@RequestParam int song_id, @RequestParam String song_name
-            , @RequestParam String emotion, @RequestParam String artist, @RequestParam String album) {
+    @PostMapping(value = "/new",produces = {"application/json;charset=utf-8"})
+    public String getSong(@RequestBody SongDto songDto)throws Exception {
 
-        int musician_id = musicianService.addMusician(artist);
-        int album_id = albumService.addAlbum(album,musician_id);
-        Song song = songService.CreatSong(song_id,song_name,emotion,album_id,musician_id,album,artist);
+        try {
+            int song_id = songDto.getSong_id();
+            String artist = songDto.getArtist();
+            String album = songDto.getAlbum();
+            String song_name = songDto.getSong_name();
+            String emotion = songDto.getEmotion();
 
-        if(song==null){
-            return Result.fail("没有这样的歌曲");
-        }else{
-            return Result.ok();
+            int musician_id = musicianService.addMusician(artist);
+            int album_id = albumService.addAlbum(album, musician_id);
+            Song song = songService.CreatSong(song_id, song_name, emotion, album_id, musician_id, album, artist);
+            return JsonResponse.OK();
+        }catch (Exception e){
+            return JsonResponse.Fail(e.getMessage());
         }
     }
 

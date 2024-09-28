@@ -1,9 +1,7 @@
 package InfiniteMusic.service.impl;
 
 import InfiniteMusic.dao.PlayList_SongDao;
-import InfiniteMusic.entity.PlayList;
 import InfiniteMusic.entity.PlayList_Song;
-import InfiniteMusic.entity.Song;
 import InfiniteMusic.service.PlayList_SongService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -41,18 +39,21 @@ public class PlayList_SongServiceImpl extends ServiceImpl<PlayList_SongDao, Play
     @Transactional
     public void deleteOneSong(int playListId,int songId) {
         LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
-        lqw.eq(PlayList_Song::getId,playListId).eq(PlayList_Song::getSong_id,songId);
+        lqw.eq(PlayList_Song::getPlaylistid,playListId).eq(PlayList_Song::getSongid,songId);
         playListSongDao.delete(lqw);
     }
 
     //查询歌单内的所有歌曲Id
     public List<Integer> findSongsinList(int playListId){
         LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
-        lqw.eq(PlayList_Song::getId,playListId);
+        lqw.eq(PlayList_Song::getPlaylistid,playListId);
         List<PlayList_Song> result = playListSongDao.selectList(lqw);
+//        if(result==null){
+//
+//        }
         List<Integer> songs = new ArrayList<>();
         for (PlayList_Song playList_song : result) {
-             songs.add(playList_song.getSong_id());
+             songs.add(playList_song.getSongid());
         }
         return songs;
     }
@@ -67,7 +68,7 @@ public class PlayList_SongServiceImpl extends ServiceImpl<PlayList_SongDao, Play
     @Transactional
     public void deleteByListId(int playListId) {
         LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
-        lqw.eq(PlayList_Song::getId,playListId);
+        lqw.eq(PlayList_Song::getPlaylistid,playListId);
         playListSongDao.delete(lqw);
     }
 

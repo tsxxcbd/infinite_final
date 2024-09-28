@@ -10,7 +10,7 @@ public class UserVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
+    private int id;
 
     private String name;
 
@@ -24,5 +24,5 @@ public class UserVo implements Serializable {
 
     private Date createTime;
 
-    private Long likelistId;
+    private int likelistId;
 }

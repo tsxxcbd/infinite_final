@@ -1,6 +1,8 @@
 package InfiniteMusic.result;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Data;
+import org.bson.json.JsonObject;
 
 @Data
 public class Result<T> {
@@ -62,6 +64,17 @@ public class Result<T> {
     public static<T> Result<T> fail(T data) {
         return build(data, ResultCodeEnum.FAIL);
     }
+
+    public static<T> Result<T> failbuild(Integer code, String message) {
+        //创建Result对象，设置值，返回对象
+        Result<T> result = new Result<>();
+        result.setData(null);
+        result.setCode(code);
+        result.setMessage(message);
+        //返回设置值之后的对象
+        return result;
+    }
+
 
 }
 

@@ -20,7 +20,7 @@ public class UserController {
     UserService userService;
     @Autowired
     PlayListServiceImpl playListService;
-//    @ApiOperation("用户登录")
+    //    @ApiOperation("用户登录")
 //    @PostMapping("/login")
 //    public ResponseEntity<User> login( String username ,  String password) throws UserException {
 //        User loginuser=userService.findByUsername(username);
@@ -63,7 +63,7 @@ public class UserController {
 //        }
 //    }
     @ApiOperation("add User(User Register)")
-    @PostMapping("register1")
+    @PostMapping("/register1")
     public Result addUser(@RequestBody UserDto userDto){
         userService.addUser(userDto);
         return Result.ok();

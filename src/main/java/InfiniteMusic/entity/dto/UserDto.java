@@ -22,5 +22,5 @@ public class UserDto implements Serializable {
 
     private Date createTime;
 
-    private Long likelistId;
+    private int likelistId;
 }

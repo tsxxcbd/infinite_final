@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.SelectKey;
 
 @Mapper
 public interface UserDao extends BaseMapper<User> {
-  //根据用户名查询用户
+    //根据用户名查询用户
     @Select("select * from user where name=#{username}")
     User findByUsername(String username);
     //添加用户

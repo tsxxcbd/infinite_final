@@ -13,6 +13,7 @@ public enum ResultCodeEnum {
     ILLEGAL_REQUEST(205, "非法请求"),
     REPEAT_SUBMIT(206, "重复提交"),;
 
+
     private Integer code;
 
     private String message;

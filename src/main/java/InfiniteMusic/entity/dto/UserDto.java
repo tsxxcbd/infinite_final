@@ -1,5 +1,6 @@
 package InfiniteMusic.entity.dto;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -16,11 +17,12 @@ public class UserDto implements Serializable {
 
     private String sex;
 
-    private int age;
+    private Integer age;
 
     private String nickname;
 
-    private Date createTime;
+    //private Date createTime;
 
+    @TableField("likelist_id")
     private Long likelistId;
 }

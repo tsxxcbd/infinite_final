@@ -1,16 +1,28 @@
 package InfiniteMusic.controller;
+import InfiniteMusic.auth.Result;
+import InfiniteMusic.auth.ResultCodeEnum;
+import InfiniteMusic.dao.UserDao;
 import InfiniteMusic.entity.User;
 import InfiniteMusic.entity.dto.UserDto;
+import InfiniteMusic.entity.dto.UserLoginDto;
+import InfiniteMusic.entity.vo.UserLoginVo;
+import InfiniteMusic.exception.InfiniteException;
 import InfiniteMusic.exception.UserException;
-import InfiniteMusic.result.Result;
+import InfiniteMusic.properties.JwtProperties;
 import InfiniteMusic.service.UserService;
 import InfiniteMusic.service.impl.PlayListServiceImpl;
 import InfiniteMusic.service.impl.UserServiceImpl;
+import InfiniteMusic.utils.JwtUtil;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -20,8 +32,41 @@ public class UserController {
     UserService userService;
     @Autowired
     PlayListServiceImpl playListService;
-//    @ApiOperation("用户登录")
-//    @PostMapping("/login")
+    @Autowired
+    UserDao userDao;
+    @Autowired
+    private JwtProperties jwtProperties;
+
+    @ApiOperation("用户登录")
+    @PostMapping("/login")
+    public Result login(UserLoginDto userLoginDto) {
+        String username = userLoginDto.getName();
+        String password = userLoginDto.getPassword();
+        User user = userDao.findByUsername(username);
+        if (user == null) {
+            throw new InfiniteException(ResultCodeEnum.WRONG_USERNAME);
+        }
+        //md5加密，暂未启用
+//        String psd = DigestUtils.md5DigestAsHex(password.getBytes());
+//        if (!psd.equals(user.getPassword())){
+//            throw new InfiniteException(ResultCodeEnum.WRONG_PASSWORD);
+//        }
+        if (!password.equals(user.getPassword())){
+            throw new InfiniteException(ResultCodeEnum.WRONG_PASSWORD);
+        }
+        //jwt
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("userId", user.getId());
+        String token = JwtUtil.createJWT(jwtProperties.getSecretKey(), jwtProperties.getTtl(), claims);
+
+        UserLoginVo userLoginVo = UserLoginVo.builder()
+                .id(user.getId())
+                .name(user.getName())
+                .token(token)
+                .build();
+
+        return Result.ok(userLoginVo);
+    }
 //    public ResponseEntity<User> login( String username ,  String password) throws UserException {
 //        User loginuser=userService.findByUsername(username);
 //        if (loginuser==null){
@@ -36,38 +81,47 @@ public class UserController {
 //            return ResponseEntity.status(UserException.WRONG_PASSWORD).build();
 //        }
 //    }
-//    @ApiOperation("用户注册")
-//    @PostMapping("/register")
-//    public ResponseEntity<User> register(String username, String password)
-//            throws UserException {
-//        if (username!=null&&username.length()>=5&&username.length()<=16
-//        && password!=null&&password.length()>=5&&password.length()<=16)
-//        {
-//            //查询用户
-//            User user=userService.findByUsername(username);
-//            if(user==null){
-//                //用户名没有被占用
-//                Long id = playListService.createLikeSongList();
-//                userService.register(username,password,id);
-//                return ResponseEntity.ok().build();
-//            }
-//            else{
-//                //被占用
-//                //throw new UserException(UserException.DUPLICATE_USERNAME,"重复的用户名");
-//                return ResponseEntity.status(UserException.DUPLICATE_USERNAME).build();
-//            }
-//
-//        }else {
-//           // throw new  UserException(UserException.ILLEGALPARAM,"不合法的参数");
-//            return ResponseEntity.status(UserException.ILLEGALPARAM).build();
-//        }
-//    }
-    @ApiOperation("add User(User Register)")
-    @PostMapping("register1")
-    public Result addUser(@RequestBody UserDto userDto){
-        userService.addUser(userDto);
-        return Result.ok();
+
+    @ApiOperation("用户注册")
+    @PostMapping("/register")
+    public Result register(UserDto userDto) {
+        String username = userDto.getName();
+        String password = userDto.getPassword();
+        if (username!=null&&username.length()>=5&&username.length()<=16
+        && password!=null&&password.length()>=5&&password.length()<=16)
+        {
+            //查询用户
+            User user1=userDao.findByUsername(username);
+            if(user1==null){
+                //用户名没有被占用
+                User user = new User();
+                Long likelistId = playListService.createLikeSongList();
+                user.setName(username);
+                //md5加密，暂未启用
+                //user.setPassword(DigestUtils.md5DigestAsHex(password.getBytes()));
+                user.setPassword(password);
+                user.setLikelistId(likelistId);
+                userDao.add(username,password,likelistId);
+                //return ResponseEntity.ok().build();
+                return Result.ok();
+            }
+            else{
+                //被占用
+                //throw new UserException(UserException.DUPLICATE_USERNAME,"重复的用户名");
+                throw new InfiniteException(ResultCodeEnum.DUPLICATE_USERNAME);
+            }
+
+        }else {
+           // throw new  UserException(UserException.ILLEGALPARAM,"不合法的参数");
+            throw new InfiniteException(ResultCodeEnum.ILLEGALPARAM);
+        }
     }
+//    @ApiOperation("add User(User Register)")
+//    @PostMapping("register1")
+//    public Result addUser(@RequestBody UserDto userDto){
+//        userService.addUser(userDto);
+//        return Result.ok();
+//    }
 
 
 }

@@ -1,5 +1,6 @@
-package InfiniteMusic.result;
+package InfiniteMusic.auth;
 
+import InfiniteMusic.auth.ResultCodeEnum;
 import lombok.Data;
 
 @Data

@@ -23,9 +23,18 @@ import java.util.Random;
         UserDao userDao;
 
         @Transactional
-        public User findByUsername(String username) {
+        public User findByUserName(String username) {
             User user=userDao.findByUsername(username);
             return user;
+        }
+
+        @Transactional
+        public void addUser(UserDto userDto) {
+            User user = new User();
+            user.setName(userDto.getName());
+            user.setPassword(userDto.getPassword());
+            user.setLikelistId(userDto.getLikelistId());
+            userDao.insert(user);
         }
 
 //        @Transactional
@@ -36,11 +45,6 @@ import java.util.Random;
 ////            user.setLikelistId(likelistId);
 //            userDao.add(username,password,likelistId);
 //        }
-
-        @Override
-        public void addUser(UserDto userDto) {
-
-        }
 
         /*@Transactional
         public void setlikeSong(String username,Long likeSongid){

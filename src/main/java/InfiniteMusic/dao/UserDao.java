@@ -13,8 +13,11 @@ public interface UserDao extends BaseMapper<User> {
     @Select("select * from user where name=#{username}")
     User findByUsername(String username);
     //添加用户
-    @Insert("insert into user (name,password,createtime,likelistId)"+
-            " values(#{username},#{password},now(),#{likelistId})")
+//    @Insert("insert into user (name,password,createtime,likelistId)"+
+//            " values(#{username},#{password},now(),#{likelistId})")
+//    void add(String username, String password,Long likelistId);
+    @Insert("insert into user (name,password,likelist_id)"+
+            " values(#{username},#{password},#{likelistId})")
     void add(String username, String password,Long likelistId);
 
     @Select("select * from user where id=#{id}")

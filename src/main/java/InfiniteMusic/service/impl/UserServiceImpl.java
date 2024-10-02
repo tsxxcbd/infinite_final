@@ -33,7 +33,7 @@ import java.util.Random;
             User user = new User();
             user.setName(userDto.getName());
             user.setPassword(userDto.getPassword());
-            user.setLikelistId(userDto.getLikelistId());
+            //user.setLikelistId(userDto.getLikelistId());
             userDao.insert(user);
         }
 

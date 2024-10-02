@@ -15,14 +15,14 @@ public class UserDto implements Serializable {
 
     private String password;
 
-    private String sex;
-
-    private Integer age;
-
-    private String nickname;
-
-    //private Date createTime;
-
-    @TableField("likelist_id")
-    private Long likelistId;
+//    private String sex;
+//
+//    private Integer age;
+//
+//    private String nickname;
+//
+//    //private Date createTime;
+//
+//    @TableField("likelist_id")
+//    private Long likelistId;
 }

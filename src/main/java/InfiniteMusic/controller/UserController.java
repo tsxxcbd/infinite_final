@@ -39,7 +39,7 @@ public class UserController {
 
     @ApiOperation("用户登录")
     @PostMapping("/login")
-    public Result login(UserLoginDto userLoginDto) {
+    public Result login(@RequestBody UserLoginDto userLoginDto) {
         String username = userLoginDto.getName();
         String password = userLoginDto.getPassword();
         User user = userDao.findByUsername(username);
@@ -84,7 +84,7 @@ public class UserController {
 
     @ApiOperation("用户注册")
     @PostMapping("/register")
-    public Result register(UserDto userDto) {
+    public Result register(@RequestBody UserDto userDto) {
         String username = userDto.getName();
         String password = userDto.getPassword();
         if (username!=null&&username.length()>=5&&username.length()<=16

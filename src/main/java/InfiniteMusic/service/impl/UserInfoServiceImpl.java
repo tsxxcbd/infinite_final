@@ -16,35 +16,43 @@ public class UserInfoServiceImpl extends ServiceImpl<UserDao, User> implements U
     @Autowired
     UserDao userDao;
 
+    public User findById(Long userId)throws Exception{
+
+        User user = userDao.findById(userId);
+        return user;
+
+    }
     //获取用户
     @Transactional
-    public User getUser(int userId) {
-        User user = userDao.findById(userId);
+    public User getUser(Long userId) throws Exception{
+        User user = findById(userId);
         //如果找不到对象，在controller层包装
         return user;
     }
 
     //获取用户的likelistid
-    public Long getlikelistid(int userId) {
-        User user = userDao.findById(userId);
+    public Long getlikelistid(Long userId) throws Exception{
+        User user = findById(userId);
         //如果找不到对象，在controller层包装
         return user.getLikelistId();
     }
 
+    //likelist_id
     //获取用户的用户名
-    public String getusername(int userId) {
-        User user = userDao.findById(userId);
+    public String getusername(Long userId) throws Exception{
+
+        User user = findById(userId);
         //如果找不到对象，在controller层包装
         return user.getName();
     }
 
-    /*@Transactional
-    public int updateUser(int userId,User user) {
-        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<User>();
-        lqw.eq(User::getId,userId);
-        int result = userDao.updateById(user);
-        //如果找不到对象，在controller层包装
-        return result;
-    }*/
+//    @Transactional
+//    public int updateUser(int userId,User user) {
+//        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<User>();
+//        lqw.eq(User::getId,userId);
+//        int result = userDao.updateById(user);
+//        //如果找不到对象，在controller层包装
+//        return result;
+//    }
 
 }

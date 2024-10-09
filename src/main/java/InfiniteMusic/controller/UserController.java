@@ -84,7 +84,7 @@ public class UserController {
 
     @ApiOperation("用户注册")
     @PostMapping("/register")
-    public Result register(@RequestBody UserDto userDto) {
+    public Result register(@RequestBody UserDto userDto) throws Exception {
         String username = userDto.getName();
         String password = userDto.getPassword();
         if (username!=null&&username.length()>=5&&username.length()<=16

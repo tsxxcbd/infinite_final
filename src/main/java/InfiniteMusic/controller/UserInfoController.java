@@ -22,7 +22,7 @@ public class UserInfoController {
 
     @ApiOperation("根据Id查询用户的详细信息")
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUser(@ApiParam("用户Id")@PathVariable int id) {
+    public ResponseEntity<User> getUser(@ApiParam("用户Id")@PathVariable Long id) throws Exception {
         User user = userInfoService.getUser(id);
         if(user==null){
             return ResponseEntity.noContent().build();

@@ -9,9 +9,8 @@ import lombok.Data;
 @TableName(value = "musician")
 public class Musician {
 
-    @TableId
-    private Long id;
+    @TableId(type = IdType.AUTO)
+    private int musicianid;
     private String name;
-    private Long album_id;
     private String profile;
 }

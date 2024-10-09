@@ -1,15 +1,14 @@
 package InfiniteMusic.controller;
 
-import InfiniteMusic.entity.PlayList;
-import InfiniteMusic.entity.PlayList_Song;
-import InfiniteMusic.exception.PlayListException;
-import InfiniteMusic.service.PlayList_SongService;
+import InfiniteMusic.auth.Result;
+import InfiniteMusic.entity.*;
+import InfiniteMusic.entity.dto.AddSongsDto;
+import InfiniteMusic.entity.dto.PlaylistDto;
+import InfiniteMusic.entity.dto.UserSongDto;
 import InfiniteMusic.service.impl.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import InfiniteMusic.service.impl.PlayList_SongServiceImpl;
 import java.util.List;
@@ -22,128 +21,271 @@ public class PlayListController {
     @Autowired
     PlayListServiceImpl playlistService ;
     @Autowired
-    PlayList_SongServiceImpl playList_songService=new PlayList_SongServiceImpl();
+    PlayList_SongServiceImpl playList_songService;
     @Autowired
     UserInfoServiceImpl userInfoService;
     @Autowired
     User_PlayListServiceImpl userPlayListService;
 
+    @Autowired
+    SongServiceImpl songService;
+
     //所有的api注解非必要写，能够自己辨认清楚就不用写了
     @ApiOperation("根据Id查询歌单的详细信息")
-    @GetMapping("/{id}")
-    public ResponseEntity<PlayList> getPlayList(@ApiParam("歌单Id")@PathVariable Long id) {
-        PlayList playList = playlistService.getPlayList(id);
-        playList.setNumber(playList_songService.finsSongsNumber(id));
-        playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
-        if(playList==null){
-            return ResponseEntity.noContent().build();
-        }else{
-            return ResponseEntity.ok(playList);
+    @GetMapping(value = "",produces = {"application/json;charset=utf-8"})
+    public Result getPlayList(@RequestBody PlayList pl) throws Exception{
+
+        try{
+            Long id = pl.getId();
+            PlayList playList = playlistService.getPlayList(id);
+            playList.setNumber(playList_songService.finsSongsNumber(id));
+            playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
+            return Result.ok(playList);
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
         }
+
+
     }
 
     @ApiOperation("根据Id查询歌单内有哪些歌曲")
-    @GetMapping("/List/{id}")
-    public ResponseEntity<List<PlayList_SongService.listSongSearchResult>> getSongsinList(@ApiParam("歌单Id")@PathVariable Long id) {
-        List<Long> songs= playList_songService.findSongsinList(id);
-        System.out.println("hhh");
-        System.out.println(songs);
-        List<PlayList_SongService.listSongSearchResult> searchResults=playList_songService.searchSong(songs);
-        System.out.println(searchResults);
-        if(searchResults==null){
-            return ResponseEntity.noContent().build();
-        }else{
-            return ResponseEntity.ok(searchResults);
+    @GetMapping(value = "/List", produces = {"application/json;charset=utf-8"})
+    public Result getSongsinList(@RequestBody PlayList pl) throws Exception{
+
+        try{
+            Long id = pl.getId();
+            List<Integer> songs= playList_songService.findSongsinList(id);
+            List<Song> searchResults=songService.searchSong(songs);
+            return Result.ok(searchResults);
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
         }
     }
 
     @ApiOperation("新建歌单")
-    @PostMapping("/newlist")
-    public ResponseEntity<Void> addPlayList(@RequestParam String name,@RequestParam String profile,@RequestParam int userid){
-        PlayList playList = playlistService.createPlayList(name,profile);
-        userPlayListService.addPlayListCreate(userid,playList.getId());
-        return ResponseEntity.ok().build();
+    @PostMapping(value = "/newlist",produces = {"application/json;charset=utf-8"})
+    public Result addPlayList(@RequestBody PlaylistDto playlistDto)throws Exception{
+
+        try{
+            String name = playlistDto.getName();
+            String profile = playlistDto.getProfile();
+            int userid = playlistDto.getUserid();
+            PlayList playList = playlistService.createPlayList(name,profile);
+            userPlayListService.addPlayListCreate((long) userid,playList.getId());
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
+
+
     }
 
     @ApiOperation("收藏歌单")
-    @PostMapping("/likelist")
-    public ResponseEntity<Void> likePlayList(@RequestParam Long playListId,@RequestParam int userid){
-        userPlayListService.addPlayListLike(userid,playListId);
-        return ResponseEntity.ok().build();
+    @PostMapping(value = "/likelist",produces = {"application/json;charset=utf-8"})
+    public Result likePlayList(@RequestBody User_PlayList user_playList)throws Exception{
+
+        try {
+            Long userid = user_playList.getId();
+            Long playListId = user_playList.getId();
+            userPlayListService.addPlayListLike(userid,playListId);
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
+
     }
 
-    @ApiOperation("删除创建的歌单")
-    @DeleteMapping("/deletelist")
-    public ResponseEntity<Void> deletePlayList(@RequestParam Long id){
-        userPlayListService.deleteCreatePlayList(id);
-        playList_songService.deleteByListId(id);
-        playlistService.deletePlayList(id);
-        return ResponseEntity.ok().build();
+    @ApiOperation("删除用户创建的歌单")
+    @DeleteMapping(value = "/deletelist",produces = {"application/json;charset=utf-8"})
+    public Result deletePlayList(@RequestBody PlayList pl)throws Exception{
+
+        try{
+            Long id =pl.getId();
+            userPlayListService.deleteCreatePlayList(id);
+            playList_songService.deleteByListId(Math.toIntExact(id));
+            playlistService.deletePlayList(Math.toIntExact(id));
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
+
     }
 
-    @ApiOperation("删除喜欢的歌单")
-    @DeleteMapping("/deletelikelist")
-    public ResponseEntity<Void> deleteLikePlayList(@RequestParam Long id){
-        userPlayListService.deleteLikePlayList(id);
-        return ResponseEntity.ok().build();
+    @ApiOperation("删除用户喜欢的歌单")
+    @DeleteMapping(value = "/deletelikelist",produces = {"application/json;charset=utf-8"})
+    public Result deleteLikePlayList(@RequestBody User_PlayList user_playList)throws Exception{
+
+        try{
+            Long playlistid = user_playList.getId();
+            Long userid = user_playList.getId();
+            userPlayListService.deleteLikePlayList(userid,playlistid);
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
     }
 
 
     @ApiOperation("为歌单中添加一首歌曲")
-    @PostMapping("/addonesong")
-    public ResponseEntity<Void> addOneSong(@RequestParam Long PlayListId ,@RequestParam Long songId){
-        playList_songService.addOneSong(PlayListId,songId);
-        return ResponseEntity.ok().build();
+    @PostMapping(value = "/addonesong",produces = {"application/json;charset=utf-8"})
+    public Result addOneSong(@RequestBody PlayList_Song playList_song)throws Exception{
+
+        try{
+            Long PlayListId = playList_song.getId();
+            Long songId = playList_song.getSong_id();
+            playList_songService.addOneSong(PlayListId,songId);
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
     }
 
     @ApiOperation("为歌单中添加一系列歌曲")
-    @PostMapping("/addmanysong")
-    public ResponseEntity<Void> addManySong(@RequestParam Long PlayListId ,@RequestParam List<Long> songIds){
-        playList_songService.addAllSong(PlayListId,songIds);
-        return ResponseEntity.ok().build();
+    @PostMapping(value = "/addmanysong",produces = {"application/json;charset=utf-8"})
+    public Result addManySong(@RequestBody AddSongsDto addSongsDto)throws Exception{
+
+        try{
+            int PlayListId = addSongsDto.getPlaylistid();
+            List<Integer> songIds = addSongsDto.getSongIds();
+            playList_songService.addAllSong((long) PlayListId,songIds);
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
     }
 
     @ApiOperation("在歌单中去除一首歌")
-    @DeleteMapping("deleteonesong")
-    public ResponseEntity<Void> deleteOneSong(@RequestParam Long PlayListId ,@RequestParam Long songId){
-        playList_songService.deleteOneSong(PlayListId,songId);
-        return ResponseEntity.ok().build();
+    @DeleteMapping(value = "/deleteonesong",produces = {"application/json;charset=utf-8"})
+    public Result deleteOneSong(@RequestBody PlayList_Song playList_song)throws Exception{
+
+        try{
+            Long PlayListId = playList_song.getId();
+            Long songId = playList_song.getSong_id();
+            playList_songService.deleteOneSong(Math.toIntExact(PlayListId), Math.toIntExact(songId));
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
+
     }
 
     @ApiOperation("查找用户喜欢的歌的列表")
-    @GetMapping("/UserlikedSong")
-    public ResponseEntity<List<PlayList_SongService.listSongSearchResult>> findLikeSongs(@RequestParam int userid){
-        Long likelistid = userInfoService.getlikelistid(userid);
-        List<Long> songs= playList_songService.findSongsinList(likelistid);
-        List<PlayList_SongService.listSongSearchResult> searchResults=playList_songService.searchSong(songs);
-        return ResponseEntity.ok(searchResults);
+    @GetMapping(value = "/UserlikedSong",produces = {"application/json;charset=utf-8"})
+    public Result findLikeSongs(@RequestBody User user)throws Exception{
+
+        try{
+            Long userid = user.getId();
+            Long likelistid = userInfoService.getlikelistid(userid);
+            List<Integer> songs= playList_songService.findSongsinList(likelistid);
+            List<Song> searchResults=songService.searchSong(songs);
+            return Result.ok(searchResults);
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
+
     }
 
     @ApiOperation("查找用户创建的歌单")
-    @GetMapping("/UserCreatelists")
-    public List<PlayList> findCreateLists(@RequestParam int userid){
-        List<Long> createdlist = userPlayListService.getCreateListId(userid);
-        List<PlayList> playLists = playlistService.getListPlayList(createdlist);
-        for(PlayList  playList : playLists){
-            playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
-            playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
+    @GetMapping(value = "/UserCreatelists",produces = {"application/json;charset=utf-8"})
+    public Result findCreateLists(@RequestBody User user)throws Exception{
+
+        try{
+            Long userid = user.getId();
+            List<Integer> createdlist = userPlayListService.getCreateListId(userid);
+            List<PlayList> playLists = playlistService.getListPlayList(createdlist);
+            for(PlayList  playList : playLists){
+                playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
+                playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
+            }
+            return Result.ok(playLists);
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
         }
-        return playLists;
+
 
     }
 
     @ApiOperation("查找用户喜欢的歌单")
-    @GetMapping("/UserLikelists")
-    public ResponseEntity<List<PlayList>> findLikeLists(@RequestParam int userid){
-        List<Long> createdlist = userPlayListService.getLikeListId(userid);
-        List<PlayList> playLists = playlistService.getListPlayList(createdlist);
-        for(PlayList  playList : playLists){
-            playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
-            int creatorid = userPlayListService.getListCreator(playList.getId());
-            String name = userInfoService.getusername(creatorid);
-            playList.setCreatorname(name);
+    @GetMapping(value = "/UserLikelists",produces = {"application/json;charset=utf-8"})
+    public Result findLikeLists(@RequestBody User user)throws Exception{
+
+        try{
+            Long userid = user.getId();
+            List<Integer> createdlist = userPlayListService.getLikeListId(userid);
+            List<PlayList> playLists = playlistService.getListPlayList(createdlist);
+            for(PlayList  playList : playLists){
+                playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
+                Long creatorid = userPlayListService.getListCreator(playList.getId());
+                String name = userInfoService.getusername(creatorid);
+                playList.setCreatorname(name);
+            }
+            return Result.ok(playLists);
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
         }
-        return ResponseEntity.ok(playLists);
+
+
+    }
+
+    @ApiOperation("用户收藏歌单")
+    @PostMapping(value = "/Likelists",produces = {"application/json;charset=utf-8"})
+    public Result LikeLists(@RequestBody User_PlayList user_playList)throws Exception{
+
+        try{
+            Long userid = user_playList.getId();
+            Long playlistid = user_playList.getId();
+            userPlayListService.addPlayListLike(userid,playlistid);
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
+
+    }
+
+    @ApiOperation("用户取消收藏歌单")
+    @DeleteMapping(value = "/Disikelists",produces = {"application/json;charset=utf-8"})
+    public Result DislikeLists(@RequestBody User_PlayList user_playList)throws Exception{
+
+        try{
+            Long userid = user_playList.getId();
+            Long playlistid = user_playList.getId();
+            userPlayListService.deleteLikePlayList(userid,playlistid);
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
+
+    }
+
+    @ApiOperation("用户喜欢歌曲")
+    @PostMapping(value = "/Likesong",produces = {"application/json;charset=utf-8"})
+    public Result Likesong(@RequestBody UserSongDto userSongDto)throws Exception{
+
+        try{
+            int userid = userSongDto.getUserid();
+            int songid = userSongDto.getSongid();
+            int songlistid = Math.toIntExact(userInfoService.getlikelistid((long) userid));
+            playList_songService.addOneSong((long) songlistid, (long) songid);
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
+
+    }
+
+    @ApiOperation("用户取消喜欢歌曲")
+    @DeleteMapping(value = "/Dislikesong",produces = {"application/json;charset=utf-8"})
+    public Result dislikesong(@RequestBody UserSongDto userSongDto)throws Exception{
+
+        try{
+            int userid = userSongDto.getUserid();
+            int songid = userSongDto.getSongid();
+            int songlistid = Math.toIntExact(userInfoService.getlikelistid((long) userid));
+            playList_songService.deleteOneSong(songlistid,songid);
+            return Result.ok();
+        }catch (Exception e){
+            return Result.fail(e.getMessage());
+        }
 
     }
 

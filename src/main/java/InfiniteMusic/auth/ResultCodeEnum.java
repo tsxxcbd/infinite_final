@@ -15,7 +15,13 @@ public enum ResultCodeEnum {
     DUPLICATE_USERNAME(207, "用户名重复"),
     ILLEGALPARAM(208, "非法参数"),
     WRONG_USERNAME(209, "用户名错误"),
-    WRONG_PASSWORD(210, "密码错误"),;
+    WRONG_PASSWORD(210, "密码错误"),
+    NO_SEARCH_RESULT(211, "没有搜索结果"),
+    NO_CONTENT(212, "没有内容"),
+    NO_PLAYLIST_FOUND(213, "没有找到歌单"),
+
+
+    ;
 
     private Integer code;
 

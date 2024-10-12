@@ -2,8 +2,10 @@ package InfiniteMusic.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @TableName(value = "user_playlist")
 public class User_PlayList {
     private Long id;//用户id

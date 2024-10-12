@@ -62,8 +62,10 @@ public class PlayListController {
         }
     }
 
-    @ApiOperation("新建歌单")
-    @PostMapping(value = "/newlist",produces = {"application/json;charset=utf-8"})
+    /*
+    * 根据userid和name创建新歌单，但其实userid不应该作为参数传入，而是使用token来判断当前user*/
+    @ApiOperation("用户新建歌单")
+    @PostMapping(value = "/newlist")
     public Result addPlayList(@RequestBody PlaylistDto playlistDto)throws Exception{
 
         try{
@@ -80,13 +82,15 @@ public class PlayListController {
 
     }
 
-    @ApiOperation("收藏歌单")
-    @PostMapping(value = "/likelist",produces = {"application/json;charset=utf-8"})
+    /*
+    * 传入userid和playlistid，设置该user收藏该playlist，问题同上*/
+    @ApiOperation("用户收藏歌单")
+    @PostMapping(value = "/likelist")
     public Result likePlayList(@RequestBody User_PlayList user_playList)throws Exception{
 
         try {
             Long userid = user_playList.getId();
-            Long playListId = user_playList.getId();
+            Long playListId = user_playList.getPlaylist_id();
             userPlayListService.addPlayListLike(userid,playListId);
             return Result.ok();
         }catch (Exception e){
@@ -96,14 +100,13 @@ public class PlayListController {
     }
 
     @ApiOperation("删除用户创建的歌单")
-    @DeleteMapping(value = "/deletelist",produces = {"application/json;charset=utf-8"})
-    public Result deletePlayList(@RequestBody PlayList pl)throws Exception{
+    @DeleteMapping(value = "/deletelist/{id}")
+    public Result deletePlayList(@PathVariable Long id)throws Exception{
 
         try{
-            Long id =pl.getId();
-            userPlayListService.deleteCreatePlayList(id);
-            playList_songService.deleteByListId(Math.toIntExact(id));
-            playlistService.deletePlayList(Math.toIntExact(id));
+            userPlayListService.deleteCreatePlayList(id);//在user_play_list表中删除所有相关数据
+            playList_songService.deleteByListId(Math.toIntExact(id));//在play_list_song表中删除所有相关数据
+            playlistService.deletePlayList(Math.toIntExact(id));//在play_list表中删除所有相关数据
             return Result.ok();
         }catch (Exception e){
             return Result.fail(e.getMessage());
@@ -112,22 +115,23 @@ public class PlayListController {
     }
 
     @ApiOperation("删除用户喜欢的歌单")
-    @DeleteMapping(value = "/deletelikelist",produces = {"application/json;charset=utf-8"})
+    @DeleteMapping(value = "/deletelikelist")
     public Result deleteLikePlayList(@RequestBody User_PlayList user_playList)throws Exception{
 
         try{
-            Long playlistid = user_playList.getId();
+            Long playlistid = user_playList.getPlaylist_id();
             Long userid = user_playList.getId();
-            userPlayListService.deleteLikePlayList(userid,playlistid);
+            userPlayListService.deleteLikePlayList(userid,playlistid);//在user_play_list表中删除所有相关数据
             return Result.ok();
         }catch (Exception e){
             return Result.fail(e.getMessage());
         }
     }
 
-
+    /*
+    * 参数是歌单id和歌曲id*/
     @ApiOperation("为歌单中添加一首歌曲")
-    @PostMapping(value = "/addonesong",produces = {"application/json;charset=utf-8"})
+    @PostMapping(value = "/addonesong")
     public Result addOneSong(@RequestBody PlayList_Song playList_song)throws Exception{
 
         try{
@@ -141,7 +145,7 @@ public class PlayListController {
     }
 
     @ApiOperation("为歌单中添加一系列歌曲")
-    @PostMapping(value = "/addmanysong",produces = {"application/json;charset=utf-8"})
+    @PostMapping(value = "/addmanysong")
     public Result addManySong(@RequestBody AddSongsDto addSongsDto)throws Exception{
 
         try{
@@ -155,7 +159,7 @@ public class PlayListController {
     }
 
     @ApiOperation("在歌单中去除一首歌")
-    @DeleteMapping(value = "/deleteonesong",produces = {"application/json;charset=utf-8"})
+    @DeleteMapping(value = "/deleteonesong")
     public Result deleteOneSong(@RequestBody PlayList_Song playList_song)throws Exception{
 
         try{
@@ -226,29 +230,29 @@ public class PlayListController {
 
 
     }
-
-    @ApiOperation("用户收藏歌单")
-    @PostMapping(value = "/Likelists",produces = {"application/json;charset=utf-8"})
-    public Result LikeLists(@RequestBody User_PlayList user_playList)throws Exception{
-
-        try{
-            Long userid = user_playList.getId();
-            Long playlistid = user_playList.getId();
-            userPlayListService.addPlayListLike(userid,playlistid);
-            return Result.ok();
-        }catch (Exception e){
-            return Result.fail(e.getMessage());
-        }
-
-    }
+//功能重复
+//    @ApiOperation("用户收藏歌单")
+//    @PostMapping(value = "/Likelists")
+//    public Result LikeLists(@RequestBody User_PlayList user_playList)throws Exception{
+//
+//        try{
+//            Long userid = user_playList.getId();
+//            Long playlistid = user_playList.getId();
+//            userPlayListService.addPlayListLike(userid,playlistid);
+//            return Result.ok();
+//        }catch (Exception e){
+//            return Result.fail(e.getMessage());
+//        }
+//
+//    }
 
     @ApiOperation("用户取消收藏歌单")
-    @DeleteMapping(value = "/Disikelists",produces = {"application/json;charset=utf-8"})
+    @DeleteMapping(value = "/Disikelists")
     public Result DislikeLists(@RequestBody User_PlayList user_playList)throws Exception{
 
         try{
             Long userid = user_playList.getId();
-            Long playlistid = user_playList.getId();
+            Long playlistid = user_playList.getPlaylist_id();
             userPlayListService.deleteLikePlayList(userid,playlistid);
             return Result.ok();
         }catch (Exception e){
@@ -257,8 +261,8 @@ public class PlayListController {
 
     }
 
-    @ApiOperation("用户喜欢歌曲")
-    @PostMapping(value = "/Likesong",produces = {"application/json;charset=utf-8"})
+    @ApiOperation("用户喜欢歌曲（添加该歌曲到用户收藏的歌单里）")
+    @PostMapping(value = "/Likesong")
     public Result Likesong(@RequestBody UserSongDto userSongDto)throws Exception{
 
         try{
@@ -273,8 +277,8 @@ public class PlayListController {
 
     }
 
-    @ApiOperation("用户取消喜欢歌曲")
-    @DeleteMapping(value = "/Dislikesong",produces = {"application/json;charset=utf-8"})
+    @ApiOperation("用户取消喜欢歌曲（从用户收藏歌单里删除该歌曲）")
+    @DeleteMapping(value = "/Dislikesong")
     public Result dislikesong(@RequestBody UserSongDto userSongDto)throws Exception{
 
         try{

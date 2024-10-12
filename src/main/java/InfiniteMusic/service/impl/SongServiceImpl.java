@@ -25,11 +25,11 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
 
         try {
             Song song = new Song();
-            song.setSongid(song_id);
-            song.setSongname(song_name);
+            song.setId(song_id);
+            song.setSongName(song_name);
             song.setEmotion(emotion);
-            song.setAlbumid(album_id);
-            song.setMusicianid(musician_id);
+            song.setAlbumId(album_id);
+            song.setMusicianId(musician_id);
             song.setAlbum(album);
             song.setArtist(artist);
             songDao.insert(song);
@@ -46,8 +46,8 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
         List<Song> searchResults = new ArrayList<>();
 
         for (int id : songIDs) {
-            LambdaQueryWrapper<Song> lqw = new LambdaQueryWrapper<Song>();
-            lqw.eq(Song::getSongid,id);
+//            LambdaQueryWrapper<Song> lqw = new LambdaQueryWrapper<Song>();
+//            lqw.eq(Song::getSongid,id);
             Song song = songDao.selectById(id);
             searchResults.add(song);
         }
@@ -80,7 +80,7 @@ public class SongServiceImpl extends ServiceImpl<SongDao, Song> implements SongS
     public List<Song> searchBySongName(String song_name) throws Exception{
 
         LambdaQueryWrapper<Song> lqw = new LambdaQueryWrapper<Song>();
-        lqw.like(Song::getSongname, "%" + song_name + "%"); // 使用 like 方法进行模糊搜索
+        lqw.like(Song::getSongName, "%" + song_name + "%"); // 使用 like 方法进行模糊搜索
         return songDao.selectList(lqw);
 
     }

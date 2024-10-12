@@ -49,7 +49,7 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
 
         try{
             LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-            lqw.eq(User_PlayList::getPlaylist_id,playListId);
+            lqw.eq(User_PlayList::getPlaylistId,playListId);
             userPlayListDao.delete(lqw);
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -62,7 +62,7 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
         try{
             LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
             lqw.eq(User_PlayList::getId,playListId).
-                    eq(User_PlayList::isCreate_like,false).
+                    eq(User_PlayList::isCreateLike,false).
                     eq(User_PlayList::getId,userid);
             userPlayListDao.delete(lqw);
         }catch (Exception e){
@@ -75,12 +75,11 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
 
         try{
             LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-            lqw.eq(User_PlayList::getId,userId).
-                    eq(User_PlayList::isCreate_like,true);
-            List<User_PlayList> user_PlayList=userPlayListDao.selectList(lqw);
+            lqw.eq(User_PlayList::getId,userId);
+            List<User_PlayList> user_PlayLists=userPlayListDao.selectList(lqw);
             List<Integer> lists = new ArrayList<>();
-            for(User_PlayList userPlayList:user_PlayList){
-                lists.add(Math.toIntExact(userPlayList.getPlaylist_id()));
+            for(User_PlayList userPlayList:user_PlayLists){
+                lists.add(Math.toIntExact(userPlayList.getPlaylistId()));
             }
             return lists;
         }catch (Exception e){
@@ -93,7 +92,7 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
 
         try{
             LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-            lqw.eq(User_PlayList::getId,userId).eq(User_PlayList::isCreate_like,false);
+            lqw.eq(User_PlayList::getId,userId).eq(User_PlayList::isCreateLike,false);
             List<User_PlayList> user_PlayList=userPlayListDao.selectList(lqw);
             List<Integer> lists = new ArrayList<>();
             for(User_PlayList userPlayList:user_PlayList){
@@ -110,7 +109,7 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
 
         try{
             LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-            lqw.eq(User_PlayList::getId,playListId).eq(User_PlayList::isCreate_like,true);
+            lqw.eq(User_PlayList::getId,playListId).eq(User_PlayList::isCreateLike,true);
             User_PlayList userPlay=userPlayListDao.selectOne(lqw);
             return userPlay.getId();
         }catch (Exception e){

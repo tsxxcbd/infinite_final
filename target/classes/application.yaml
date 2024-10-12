@@ -26,3 +26,7 @@ infinite:
         ttl: 1209600000 # 14天
         # 设置前端传递过来的令牌名称
         token-name: token
+mybatis-plus:
+    configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+        map-underscore-to-camel-case: true

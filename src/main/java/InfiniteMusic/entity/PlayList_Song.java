@@ -14,11 +14,11 @@ import java.util.List;
 public class PlayList_Song {
     //PLayList和Song的对应关系
     private Long id;
-    private Long song_id;
+    private Long songId;
 
     public PlayList_Song(Long playlistId,Long SongId){
         this.id=playlistId;
-        this.song_id=SongId;
+        this.songId=SongId;
     }
 
 }

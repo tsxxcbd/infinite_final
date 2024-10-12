@@ -51,7 +51,7 @@ public class PlayList_SongServiceImpl extends ServiceImpl<PlayList_SongDao, Play
 
         try{
             LambdaQueryWrapper<PlayList_Song> lqw = new LambdaQueryWrapper<PlayList_Song>();
-            lqw.eq(PlayList_Song::getId,playListId).eq(PlayList_Song::getSong_id,songId);
+            lqw.eq(PlayList_Song::getId,playListId).eq(PlayList_Song::getSongId,songId);
             playListSongDao.delete(lqw);
         }catch (Exception e){
             throw new Exception(e.getMessage());
@@ -71,7 +71,7 @@ public class PlayList_SongServiceImpl extends ServiceImpl<PlayList_SongDao, Play
             }
             List<Integer> songs = new ArrayList<>();
             for (PlayList_Song playList_song : result) {
-                songs.add(Math.toIntExact(playList_song.getSong_id()));
+                songs.add(Math.toIntExact(playList_song.getSongId()));
             }
             return songs;
         }catch (Exception e){

@@ -90,7 +90,7 @@ public class PlayListController {
 
         try {
             Long userid = user_playList.getId();
-            Long playListId = user_playList.getPlaylist_id();
+            Long playListId = user_playList.getPlaylistId();
             userPlayListService.addPlayListLike(userid,playListId);
             return Result.ok();
         }catch (Exception e){
@@ -119,7 +119,7 @@ public class PlayListController {
     public Result deleteLikePlayList(@RequestBody User_PlayList user_playList)throws Exception{
 
         try{
-            Long playlistid = user_playList.getPlaylist_id();
+            Long playlistid = user_playList.getPlaylistId();
             Long userid = user_playList.getId();
             userPlayListService.deleteLikePlayList(userid,playlistid);//在user_play_list表中删除所有相关数据
             return Result.ok();
@@ -136,7 +136,7 @@ public class PlayListController {
 
         try{
             Long PlayListId = playList_song.getId();
-            Long songId = playList_song.getSong_id();
+            Long songId = playList_song.getSongId();
             playList_songService.addOneSong(PlayListId,songId);
             return Result.ok();
         }catch (Exception e){
@@ -164,7 +164,7 @@ public class PlayListController {
 
         try{
             Long PlayListId = playList_song.getId();
-            Long songId = playList_song.getSong_id();
+            Long songId = playList_song.getSongId();
             playList_songService.deleteOneSong(Math.toIntExact(PlayListId), Math.toIntExact(songId));
             return Result.ok();
         }catch (Exception e){
@@ -252,7 +252,7 @@ public class PlayListController {
 
         try{
             Long userid = user_playList.getId();
-            Long playlistid = user_playList.getPlaylist_id();
+            Long playlistid = user_playList.getPlaylistId();
             userPlayListService.deleteLikePlayList(userid,playlistid);
             return Result.ok();
         }catch (Exception e){

@@ -109,7 +109,7 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
 
         try{
             LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-            lqw.eq(User_PlayList::getId,playListId).eq(User_PlayList::isCreateLike,true);
+            lqw.eq(User_PlayList::getPlaylistId,playListId).eq(User_PlayList::isCreateLike,true);
             User_PlayList userPlay=userPlayListDao.selectOne(lqw);
             return userPlay.getId();
         }catch (Exception e){

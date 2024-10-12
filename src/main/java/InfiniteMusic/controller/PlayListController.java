@@ -5,6 +5,7 @@ import InfiniteMusic.entity.*;
 import InfiniteMusic.entity.dto.AddSongsDto;
 import InfiniteMusic.entity.dto.PlaylistDto;
 import InfiniteMusic.entity.dto.UserSongDto;
+import InfiniteMusic.entity.vo.PlayListsVo;
 import InfiniteMusic.service.impl.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -38,9 +39,19 @@ public class PlayListController {
         try{
 //            Long id = pl.getId();
             PlayList playList = playlistService.getPlayList(id);
-//            playList.setNumber(playList_songService.finsSongsNumber(id));
-//            playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
-            return Result.ok(playList);
+            playList.setNumber(playList_songService.finsSongsNumber(id));
+            playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
+            PlayListsVo playListsVo = new PlayListsVo();
+            playListsVo.setId(playList.getId());
+            playListsVo.setName(playList.getName());
+            playListsVo.setProfile(playList.getProfile());
+            playListsVo.setNumber(playList.getNumber());
+            playListsVo.setCreatorname(playList.getCreatorname());
+            List<Integer> songs= playList_songService.findSongsinList(id);
+            List<Song> searchResults=songService.searchSong(songs);
+            playListsVo.setSongList(searchResults);
+
+            return Result.ok(playListsVo);
         }catch (Exception e){
             return Result.fail(e.getMessage());
         }
@@ -197,10 +208,11 @@ public class PlayListController {
 //            Long userid = user.getId();
             List<Integer> createdlist = userPlayListService.getCreateListId(id);
             List<PlayList> playLists = playlistService.getListPlayList(createdlist);
-//            for(PlayList  playList : playLists){
-//                playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
-//                playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
-//            }
+            for(PlayList  playList : playLists){
+                playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
+                Long userid=userPlayListService.getListCreator(playList.getId());
+                playList.setCreatorname(userInfoService.getusername(userid));
+            }
             return Result.ok(playLists);
         }catch (Exception e){
             return Result.fail(e.getMessage());

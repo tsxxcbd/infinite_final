@@ -2,14 +2,12 @@ package InfiniteMusic.controller;
 
 import InfiniteMusic.auth.Result;
 import InfiniteMusic.auth.ResultCodeEnum;
+import InfiniteMusic.dao.PlayListDao;
 import InfiniteMusic.entity.PlayList;
 import InfiniteMusic.entity.Song;
 import InfiniteMusic.entity.dto.SearchDto;
 import InfiniteMusic.exception.InfiniteException;
-import InfiniteMusic.service.impl.AlbumServiceImpl;
-import InfiniteMusic.service.impl.MusicianServiceImpl;
-import InfiniteMusic.service.impl.PlayListServiceImpl;
-import InfiniteMusic.service.impl.SongServiceImpl;
+import InfiniteMusic.service.impl.*;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -27,15 +25,22 @@ import static com.mongodb.client.model.Filters.regex;
 @RequestMapping("/search")
 public class SearchController {
 
-
+    @Autowired
+    PlayListDao playListdao;
     @Autowired
     SongServiceImpl songService;
+    @Autowired
+    PlayList_SongServiceImpl playList_songService;
     @Autowired
     AlbumServiceImpl albumService;
     @Autowired
     MusicianServiceImpl musicianService;
     @Autowired
     PlayListServiceImpl playListService;
+    @Autowired
+    UserInfoServiceImpl userInfoService;
+    @Autowired
+    User_PlayListServiceImpl userPlayListService;
 
 
     @ApiOperation("总体查询歌曲")
@@ -148,15 +153,21 @@ public class SearchController {
     }
 
     @ApiOperation("根据歌单简介查询歌单")
-    @GetMapping(value = "/profile",produces = {"application/json;charset=utf-8"})
-    public Result searchListByProfile(@RequestBody PlayList playList)throws Exception {
+    @GetMapping(value = "/profile/{profile}")
+    public Result searchListByProfile(@PathVariable String profile)throws Exception {
 
         try{
-            String Profile = playList.getProfile();
-            List<PlayList> results = playListService.searchListByProfile(Profile);
+//            String Profile = playList.getProfile();
+            List<PlayList> results = playListService.searchListByProfile(profile);
             // 如果没有搜索到结果，返回404的状态码和消息
             if (results.isEmpty()) {
                 throw new InfiniteException(ResultCodeEnum.NO_SEARCH_RESULT);
+            }
+            for(PlayList playList:results){
+                playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
+                Long userid=userPlayListService.getListCreator(playList.getId());
+                playList.setCreatorname(userInfoService.getusername(userid));
+                playListdao.updateById(playList);
             }
             return Result.ok(results);
         }catch (Exception e){
@@ -166,12 +177,18 @@ public class SearchController {
     }
 
     @ApiOperation("根据歌单名字查询歌单")
-    @GetMapping(value = "/listname",produces = {"application/json;charset=utf-8"})
-    public Result searchListByName(@RequestBody PlayList playList)throws Exception {
+    @GetMapping(value = "/listname/{name}")
+    public Result searchListByName(@PathVariable String name)throws Exception {
 
         try{
-            String name = playList.getName();
+//            String name = playList.getName();
             List<PlayList> results = playListService.searchListByName(name);
+            for(PlayList playList:results){
+                playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
+                Long userid=userPlayListService.getListCreator(playList.getId());
+                playList.setCreatorname(userInfoService.getusername(userid));
+                playListdao.updateById(playList);
+            }
             // 如果没有搜索到结果，返回404的状态码和消息
             if (results.isEmpty()) {
                 throw new InfiniteException(ResultCodeEnum.NO_SEARCH_RESULT);

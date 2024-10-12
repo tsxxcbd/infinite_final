@@ -1,6 +1,7 @@
 package InfiniteMusic.controller;
 
 import InfiniteMusic.auth.Result;
+import InfiniteMusic.dao.PlayListDao;
 import InfiniteMusic.entity.*;
 import InfiniteMusic.entity.dto.AddSongsDto;
 import InfiniteMusic.entity.dto.PlaylistDto;
@@ -30,6 +31,8 @@ public class PlayListController {
 
     @Autowired
     SongServiceImpl songService;
+    @Autowired
+    PlayListDao playListdao;
 
     //所有的api注解非必要写，能够自己辨认清楚就不用写了
     @ApiOperation("根据Id查询歌单的详细信息")
@@ -41,6 +44,7 @@ public class PlayListController {
             PlayList playList = playlistService.getPlayList(id);
             playList.setNumber(playList_songService.finsSongsNumber(id));
             playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
+            playListdao.updateById(playList);
             PlayListsVo playListsVo = new PlayListsVo();
             playListsVo.setId(playList.getId());
             playListsVo.setName(playList.getName());
@@ -212,6 +216,7 @@ public class PlayListController {
                 playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
                 Long userid=userPlayListService.getListCreator(playList.getId());
                 playList.setCreatorname(userInfoService.getusername(userid));
+                playListdao.updateById(playList);
             }
             return Result.ok(playLists);
         }catch (Exception e){

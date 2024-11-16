@@ -19,6 +19,7 @@ public enum ResultCodeEnum {
     NO_SEARCH_RESULT(211, "没有搜索结果"),
     NO_CONTENT(212, "没有内容"),
     NO_PLAYLIST_FOUND(213, "没有找到歌单"),
+    USER_NOT_EXIST(214, "用户不存在"),
 
 
     ;

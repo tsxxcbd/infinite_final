@@ -1,7 +1,10 @@
 package InfiniteMusic.controller;
 
+import InfiniteMusic.auth.Result;
+import InfiniteMusic.auth.ResultCodeEnum;
 import InfiniteMusic.entity.PlayList;
 import InfiniteMusic.entity.User;
+import InfiniteMusic.exception.InfiniteException;
 import InfiniteMusic.exception.UserInfoException;
 import InfiniteMusic.service.UserInfoService;
 import InfiniteMusic.service.UserService;
@@ -24,22 +27,22 @@ public class UserInfoController {
     private RedisTemplate redisTemplate;
     @ApiOperation("根据Id查询用户的详细信息")
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUser(@ApiParam("用户Id")@PathVariable Long id) throws Exception {
+    public Result getUser(@ApiParam("用户Id")@PathVariable Long id) throws Exception {
         User user = userInfoService.getUser(id);
         if(user==null){
-            return ResponseEntity.noContent().build();
+            throw new InfiniteException(ResultCodeEnum.USER_NOT_EXIST);
         }else{
-            return ResponseEntity.ok(user);
+            return Result.ok(user);
         }
     }
     @ApiOperation("根据id修改用户信息")
     @PostMapping("/update")
-    public ResponseEntity<User> updateUser(@RequestBody User user) {
+    public Result updateUser(@RequestBody User user) {
         int result = userInfoService.updateUser(user);
         if(result==0){
-            return ResponseEntity.noContent().build();
+            throw new InfiniteException(ResultCodeEnum.USER_NOT_EXIST);
         }else{
-            return ResponseEntity.ok(user);
+            return Result.ok();
         }
     }
 

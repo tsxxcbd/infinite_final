@@ -10,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,8 @@ import org.springframework.web.bind.annotation.*;
 public class UserInfoController {
     @Autowired
     private UserInfoServiceImpl userInfoService;
-
+    @Autowired
+    private RedisTemplate redisTemplate;
     @ApiOperation("根据Id查询用户的详细信息")
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@ApiParam("用户Id")@PathVariable Long id) throws Exception {

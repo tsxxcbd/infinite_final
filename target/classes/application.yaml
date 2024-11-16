@@ -11,6 +11,10 @@ spring:
     mvc:
         pathmatch:
             matching-strategy: ant_path_matcher
+    redis:
+        host: localhost
+        port: 6379
+        database: 10
 
 # MongoDB 配置
     data:

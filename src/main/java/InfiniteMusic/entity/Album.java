@@ -7,7 +7,8 @@ import lombok.Data;
 
 @Data
 @TableName(value = "album")
-public class Album {
+public class Album implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
     @TableId(type = IdType.AUTO)
     private int albumid;

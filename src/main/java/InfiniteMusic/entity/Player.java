@@ -3,7 +3,8 @@ package InfiniteMusic.entity;
 import lombok.Data;
 
 @Data
-public class Player {
+public class Player implements java.io.Serializable{
+    private static final long serialVersionUID = 1L;
 
     private Song song;
     private PlayList currentList;

@@ -8,11 +8,13 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Data
 @TableName(value="playlist")
-public class PlayListsVo {
+public class PlayListsVo implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     //存放歌单的细节
     @TableId(type = IdType.AUTO)

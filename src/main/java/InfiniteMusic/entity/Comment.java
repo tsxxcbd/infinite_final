@@ -8,7 +8,8 @@ import org.springframework.data.annotation.Id;
 
 @Data
 @TableName(value = "comment")
-public class Comment {
+public class Comment implements java.io.Serializable {
+    private static final long serialVersionUID = 1L;
 
     @TableId(type = IdType.AUTO)
     private Long id;

@@ -11,6 +11,7 @@ import InfiniteMusic.service.impl.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 import InfiniteMusic.service.impl.PlayList_SongServiceImpl;
 import java.util.List;
@@ -33,19 +34,28 @@ public class PlayListController {
     SongServiceImpl songService;
     @Autowired
     PlayListDao playListdao;
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     //所有的api注解非必要写，能够自己辨认清楚就不用写了
     @ApiOperation("根据Id查询歌单的详细信息")
     @GetMapping(value = "/{id}")
     public Result getPlayList(@PathVariable Long id) throws Exception{
 
+        String key = "playlist_" + id;
+        PlayListsVo playListsVo = (PlayListsVo) redisTemplate.opsForValue().get(key);
+        if(playListsVo != null){
+            //如果存在，直接返回，无须查询数据库
+            return Result.ok(playListsVo);
+        }
         try{
 //            Long id = pl.getId();
             PlayList playList = playlistService.getPlayList(id);
             playList.setNumber(playList_songService.finsSongsNumber(id));
             playList.setCreatorname(userInfoService.getusername(userPlayListService.getListCreator(playList.getId())));
             playListdao.updateById(playList);
-            PlayListsVo playListsVo = new PlayListsVo();
+//            PlayListsVo playListsVo = new PlayListsVo();
+            playListsVo = new PlayListsVo();
             playListsVo.setId(playList.getId());
             playListsVo.setName(playList.getName());
             playListsVo.setProfile(playList.getProfile());
@@ -54,7 +64,7 @@ public class PlayListController {
             List<Integer> songs= playList_songService.findSongsinList(id);
             List<Song> searchResults=songService.searchSong(songs);
             playListsVo.setSongList(searchResults);
-
+            redisTemplate.opsForValue().set(key, playListsVo);
             return Result.ok(playListsVo);
         }catch (Exception e){
             return Result.fail(e.getMessage());
@@ -66,11 +76,17 @@ public class PlayListController {
     @ApiOperation("根据Id查询歌单内有哪些歌曲")
     @GetMapping(value = "/List/{id}")
     public Result getSongsinList(@PathVariable Long id) throws Exception{
-
+        String key = "getSongsinList_" + id;
+        List<Song> searchResults = (List<Song>) redisTemplate.opsForValue().get(key);
+        if(searchResults != null){
+            //如果存在，直接返回，无须查询数据库
+            return Result.ok(searchResults);
+        }
         try{
 //            Long id = pl.getId();
             List<Integer> songs= playList_songService.findSongsinList(id);
-            List<Song> searchResults=songService.searchSong(songs);
+            searchResults=songService.searchSong(songs);
+            redisTemplate.opsForValue().set(key, searchResults);
             return Result.ok(searchResults);
         }catch (Exception e){
             return Result.fail(e.getMessage());
@@ -191,12 +207,18 @@ public class PlayListController {
     @ApiOperation("查找用户喜欢的歌的列表")
     @GetMapping(value = "/UserlikedSong/{id}")
     public Result findLikeSongs(@PathVariable Long id)throws Exception{
-
+        String key = "findLikeSongs_" + id;
+        List<Song> searchResults = (List<Song>) redisTemplate.opsForValue().get(key);
+        if(searchResults != null){
+            //如果存在，直接返回，无须查询数据库
+            return Result.ok(searchResults);
+        }
         try{
 //            Long userid = user.getId();
             Long likelistid = userInfoService.getlikelistid(id);
             List<Integer> songs= playList_songService.findSongsinList(likelistid);
-            List<Song> searchResults=songService.searchSong(songs);
+            searchResults=songService.searchSong(songs);
+            redisTemplate.opsForValue().set(key, searchResults);
             return Result.ok(searchResults);
         }catch (Exception e){
             return Result.fail(e.getMessage());
@@ -207,17 +229,23 @@ public class PlayListController {
     @ApiOperation("查找用户创建的歌单")
     @GetMapping(value = "/UserCreatelists/{id}")
     public Result findCreateLists(@PathVariable Long id)throws Exception{
-
+        String key = "findCreateLists_" + id;
+        List<PlayList> playLists = (List<PlayList>) redisTemplate.opsForValue().get(key);
+        if(playLists != null){
+            //如果存在，直接返回，无须查询数据库
+            return Result.ok(playLists);
+        }
         try{
 //            Long userid = user.getId();
             List<Integer> createdlist = userPlayListService.getCreateListId(id);
-            List<PlayList> playLists = playlistService.getListPlayList(createdlist);
+            playLists = playlistService.getListPlayList(createdlist);
             for(PlayList  playList : playLists){
                 playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
                 Long userid=userPlayListService.getListCreator(playList.getId());
                 playList.setCreatorname(userInfoService.getusername(userid));
                 playListdao.updateById(playList);
             }
+            redisTemplate.opsForValue().set(key, playLists);
             return Result.ok(playLists);
         }catch (Exception e){
             System.out.println(e.getMessage());
@@ -230,17 +258,23 @@ public class PlayListController {
     @ApiOperation("查找用户喜欢的歌单")
     @GetMapping(value = "/UserLikelists/{id}")
     public Result findLikeLists(@PathVariable Long id)throws Exception{
-
+        String key = "findLikeLists_" + id;
+        List<PlayList> playLists = (List<PlayList>) redisTemplate.opsForValue().get(key);
+        if(playLists != null){
+            //如果存在，直接返回，无须查询数据库
+            return Result.ok(playLists);
+        }
         try{
 //            Long userid = user.getId();
             List<Integer> createdlist = userPlayListService.getLikeListId(id);
-            List<PlayList> playLists = playlistService.getListPlayList(createdlist);
+            playLists = playlistService.getListPlayList(createdlist);
 //            for(PlayList  playList : playLists){
 //                playList.setNumber(playList_songService.finsSongsNumber(playList.getId()));
 //                Long creatorid = userPlayListService.getListCreator(playList.getId());
 //                String name = userInfoService.getusername(creatorid);
 //                playList.setCreatorname(name);
 //            }
+            redisTemplate.opsForValue().set(key, playLists);
             return Result.ok(playLists);
         }catch (Exception e){
             return Result.fail(e.getMessage());

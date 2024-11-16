@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @TableName(value = "user_playlist")
-public class User_PlayList {
+public class User_PlayList implements   java.io.Serializable{
+    private static final long serialVersionUID = 1L;
     private Long id;//用户id
     @TableField("playlist_id")
     private Long playlistId;

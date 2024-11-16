@@ -11,7 +11,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @TableName(value="playList_song")
-public class PlayList_Song {
+public class PlayList_Song implements java.io.Serializable{
+    private static final long serialVersionUID = 1L;
     //PLayList和Song的对应关系
     private Long id;
     private Long songId;

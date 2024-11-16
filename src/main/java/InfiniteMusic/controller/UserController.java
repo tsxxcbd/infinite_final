@@ -17,6 +17,7 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.DigestUtils;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,8 @@ public class UserController {
     UserDao userDao;
     @Autowired
     private JwtProperties jwtProperties;
-
+    @Autowired
+    private RedisTemplate redisTemplate;
     @ApiOperation("用户登录")
     @PostMapping("/login")
     public Result login(@RequestBody UserLoginDto userLoginDto) {

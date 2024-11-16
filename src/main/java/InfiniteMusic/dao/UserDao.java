@@ -22,5 +22,8 @@ public interface UserDao extends BaseMapper<User> {
 
     @Select("select * from user where id=#{id}")
     User findById(Long id);
+
+
+//    User updateById(User user);
 }
 

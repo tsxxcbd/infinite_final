@@ -20,7 +20,9 @@ public class User {
     private String sex;
     private int age;
     private String nickname;
-    private Date createTime;
+    private String info;
+    private String avatar;
+    //private Date createTime;
     @TableField("likelist_id")
     private Long likelistId;
 

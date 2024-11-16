@@ -96,7 +96,7 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
             List<User_PlayList> user_PlayList=userPlayListDao.selectList(lqw);
             List<Integer> lists = new ArrayList<>();
             for(User_PlayList userPlayList:user_PlayList){
-                lists.add(Math.toIntExact(userPlayList.getId()));
+                lists.add(Math.toIntExact(userPlayList.getPlaylistId()));
             }
             return lists;
         }catch (Exception e){

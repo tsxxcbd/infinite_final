@@ -46,13 +46,14 @@ public class UserInfoServiceImpl extends ServiceImpl<UserDao, User> implements U
         return user.getName();
     }
 
-//    @Transactional
-//    public int updateUser(int userId,User user) {
-//        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<User>();
-//        lqw.eq(User::getId,userId);
-//        int result = userDao.updateById(user);
-//        //如果找不到对象，在controller层包装
-//        return result;
-//    }
+    @Transactional
+    public int updateUser(User user) {
+        Long userId = user.getId();
+        LambdaQueryWrapper<User> lqw = new LambdaQueryWrapper<User>();
+        lqw.eq(User::getId,userId);
+        int result = userDao.updateById(user);
+        //如果找不到对象，在controller层包装
+        return result;
+    }
 
 }

@@ -30,16 +30,15 @@ public class UserInfoController {
             return ResponseEntity.ok(user);
         }
     }
-
-    /*@ApiOperation("根据id修改用户信息")
-    @GetMapping("/1/{id}")
-    public ResponseEntity<User> updateUser(@ApiParam("用户id")@PathVariable int id, @RequestBody User user) {
-        int result = userInfoService.updateUser(id,user);
+    @ApiOperation("根据id修改用户信息")
+    @PostMapping("/update")
+    public ResponseEntity<User> updateUser(@RequestBody User user) {
+        int result = userInfoService.updateUser(user);
         if(result==0){
             return ResponseEntity.noContent().build();
         }else{
             return ResponseEntity.ok(user);
         }
-    }*/
+    }
 
 }

@@ -220,7 +220,8 @@ public class PlayListController {
             }
             return Result.ok(playLists);
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            System.out.println(e.getMessage());
+            return null;
         }
 
 

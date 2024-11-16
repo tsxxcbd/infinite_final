@@ -75,7 +75,7 @@ public class User_PlayListServiceImpl extends ServiceImpl<User_PlayListDao, User
 
         try{
             LambdaQueryWrapper<User_PlayList> lqw = new LambdaQueryWrapper<User_PlayList>();
-            lqw.eq(User_PlayList::getId,userId);
+            lqw.eq(User_PlayList::getId,userId).eq(User_PlayList::isCreateLike,true);
             List<User_PlayList> user_PlayLists=userPlayListDao.selectList(lqw);
             List<Integer> lists = new ArrayList<>();
             for(User_PlayList userPlayList:user_PlayLists){

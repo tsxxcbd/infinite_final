@@ -67,7 +67,7 @@ public class PlayListController {
             redisTemplate.opsForValue().set(key, playListsVo);
             return Result.ok(playListsVo);
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
 
@@ -89,7 +89,7 @@ public class PlayListController {
             redisTemplate.opsForValue().set(key, searchResults);
             return Result.ok(searchResults);
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
     }
 
@@ -105,9 +105,11 @@ public class PlayListController {
             int userid = playlistDto.getUserid();
             PlayList playList = playlistService.createPlayList(name,profile);
             userPlayListService.addPlayListCreate((long) userid,playList.getId());
+            String key = "findCreateLists_" + userid;
+            redisTemplate.delete(key);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
 
@@ -123,9 +125,11 @@ public class PlayListController {
             Long userid = user_playList.getId();
             Long playListId = user_playList.getPlaylistId();
             userPlayListService.addPlayListLike(userid,playListId);
+            String key = "findLikeLists_" + userid;
+            redisTemplate.delete(key);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
     }
@@ -138,9 +142,12 @@ public class PlayListController {
             userPlayListService.deleteCreatePlayList(id);//在user_play_list表中删除所有相关数据
             playList_songService.deleteByListId(Math.toIntExact(id));//在play_list_song表中删除所有相关数据
             playlistService.deletePlayList(Math.toIntExact(id));//在play_list表中删除所有相关数据
+            String key = "findCreateLists_" + id;
+            redisTemplate.delete(key);
+
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
     }
@@ -153,9 +160,11 @@ public class PlayListController {
             Long playlistid = user_playList.getPlaylistId();
             Long userid = user_playList.getId();
             userPlayListService.deleteLikePlayList(userid,playlistid);//在user_play_list表中删除所有相关数据
+            String key = "findLikeLists_" + playlistid;
+            redisTemplate.delete(key);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
     }
 
@@ -169,9 +178,13 @@ public class PlayListController {
             Long PlayListId = playList_song.getId();
             Long songId = playList_song.getSongId();
             playList_songService.addOneSong(PlayListId,songId);
+            String key = "playlist_" + PlayListId;
+            redisTemplate.delete(key);
+            String key2 = "getSongsinList_" + PlayListId;
+            redisTemplate.delete(key2);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
     }
 
@@ -183,9 +196,13 @@ public class PlayListController {
             int PlayListId = addSongsDto.getPlaylistid();
             List<Integer> songIds = addSongsDto.getSongIds();
             playList_songService.addAllSong((long) PlayListId,songIds);
+            String key = "playlist_" + PlayListId;
+            redisTemplate.delete(key);
+            String key2 = "getSongsinList_" + PlayListId;
+            redisTemplate.delete(key2);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
     }
 
@@ -197,9 +214,11 @@ public class PlayListController {
             Long PlayListId = playList_song.getId();
             Long songId = playList_song.getSongId();
             playList_songService.deleteOneSong(Math.toIntExact(PlayListId), Math.toIntExact(songId));
+            String key = "playlist_" + PlayListId;
+            redisTemplate.delete(key);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
     }
@@ -221,7 +240,7 @@ public class PlayListController {
             redisTemplate.opsForValue().set(key, searchResults);
             return Result.ok(searchResults);
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
     }
@@ -277,7 +296,7 @@ public class PlayListController {
             redisTemplate.opsForValue().set(key, playLists);
             return Result.ok(playLists);
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
 
@@ -306,9 +325,11 @@ public class PlayListController {
             Long userid = user_playList.getId();
             Long playlistid = user_playList.getPlaylistId();
             userPlayListService.deleteLikePlayList(userid,playlistid);
+            String key = "findLikeLists_" + userid;
+            redisTemplate.delete(key);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
     }
@@ -322,9 +343,11 @@ public class PlayListController {
             int songid = userSongDto.getSongid();
             int songlistid = Math.toIntExact(userInfoService.getlikelistid((long) userid));
             playList_songService.addOneSong((long) songlistid, (long) songid);
+            String key = "findLikeLists_" + userid;
+            redisTemplate.delete(key);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
     }
@@ -338,9 +361,11 @@ public class PlayListController {
             int songid = userSongDto.getSongid();
             int songlistid = Math.toIntExact(userInfoService.getlikelistid((long) userid));
             playList_songService.deleteOneSong(songlistid,songid);
+            String key = "findLikeLists_" + userid;
+            redisTemplate.delete(key);
             return Result.ok();
         }catch (Exception e){
-            return Result.fail(e.getMessage());
+            return Result.fail(null);
         }
 
     }
